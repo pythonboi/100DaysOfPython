@@ -12,7 +12,7 @@ femaleLower = female_name.lower()
 
 both = guyLower + femaleLower
 
-print(f"Male name is: {guyLower} and female name is: {femaleLower}")
+print(f"Male name is: {guyLower} and female name is: {femaleLower}\n")
 
 
 print("T occurs", both.count("t"), " ", "L occurs", both.count("l"))
@@ -34,7 +34,7 @@ print(f"Your True Love Score = {trueCount}{loveCount}")
 print("\n")
 
 if int(totalCount) < 10 or int(totalCount) > 90:
-    print(f"Your score is {totalCount}")
+    print(f"Your score is {totalCount}, you go together like coke and mentos")
 elif 40 <= int(totalCount) <= 50:
     print(f"Your score is {totalCount}, you are alright together")
 else:
