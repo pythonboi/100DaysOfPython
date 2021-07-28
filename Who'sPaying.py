@@ -8,6 +8,6 @@ print(nameList)
 
 n = len(nameList)
 
-nm = random.randint(0, 6)
+nm = random.randint(0, n)
 
 print(f"{nameList[nm].title()} is going to buy the meal today!")
