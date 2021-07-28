@@ -12,13 +12,6 @@ position = (input("Where do you want to put the treasure? "))
 
 
 m = list(str(position))
-#print(m)
-
-print(type(m[0]))
-
-print(m[0], m[1])
-
-print(m[1])
 
 
 if m[0] == "1" and m[1] == "1":
@@ -34,25 +27,14 @@ elif m[0] == "2" and m[1] == "2":
 elif m[0] == "2" and m[1] == "3":
     map[2][1] = "x"
 elif m[0] == "3" and m[1] == "1":
-    map[2][0] = "x"
+    map[0][2] = "x"
 elif m[0] == "3" and m[1] == "2":
-    map[2][1] = "x"
+    map[1][2] = "x"
 elif m[0] == "3" and m[1] == "3":
     map[2][2] = "x"
 else:
-    print("ok")
+    print("Please use two digit numbers only")
 
-
-# if m[0] == "0" and m[0] == "0":
-#     map[0][0] = "x"
-# elif m[0] == "0" and m[1] == "1":
-#     map[0][1] = "x"
-# elif m[0] == "0" and m[2] == "2":
-#     map[0][2] = "x"
-# elif map[2] == row1[2] and map[2] == row3[2]:
-#     map[2][2] = "x"
-
-# row3[2] = "x"
 # Write your code above this row 👆
 
 # 🚨 Don't change the code below 👇
