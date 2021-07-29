@@ -44,18 +44,21 @@ elif pick == 2:
 else:
     print("Please pick number from 0-2")
 
+
 # Using Random to select number randomly
 
 choose = random.choice(selection)
-# print(choose)
 
 m = len(selection)
 
 take = random.randint(0, m-1)
-# print(take)
+
 
 # Computer Selection
 # take variable is use for computer
+
+if pick > 3:
+    print("Computer won by default")
 
 if take == 0:
     print(f"Computer picks{rock}")
@@ -70,7 +73,7 @@ elif take == 2:
 if pick == 0 and take == 0:
     print("It is a Draw")
 elif pick == 0 and take == 1:
-    print("You loose, Computer Wins")
+    print("Computer Won")
 elif pick == 0 and take == 2:
     print("I won")
 elif pick == 1 and take == 0:
@@ -81,9 +84,13 @@ elif pick == 2 and take == 1:
     print("I won")
 elif take == 1 and pick == 0:
     print("Computer Won")
+if take == 0 and pick == 2:
+    print("Computer Won")
 elif take == 2 and pick == 1:
     print("Computer Won")
 elif take == 2 and pick == 2:
     print("It is a draw")
+
+
 
 
