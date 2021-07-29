@@ -33,6 +33,7 @@ pick = int(input("What do you choose? 0 for Rock, 1 for Paper and 2 for Scissors
 selection = [rock, paper, scissors]
 
 # Human selection
+# pick variable is use for Human
 
 if pick == 0:
     print(f"human pick{rock}")
@@ -51,9 +52,10 @@ choose = random.choice(selection)
 m = len(selection)
 
 take = random.randint(0, m-1)
-print(take)
+# print(take)
 
 # Computer Selection
+# take variable is use for computer
 
 if take == 0:
     print(f"Computer picks{rock}")
@@ -70,10 +72,18 @@ if pick == 0 and take == 0:
 elif pick == 0 and take == 1:
     print("You loose, Computer Wins")
 elif pick == 0 and take == 2:
-    print("I win")
+    print("I won")
 elif pick == 1 and take == 0:
-    print()
+    print("I Won")
 elif pick == 1 and take == 1:
+    print("It is a draw")
+elif pick == 2 and take == 1:
+    print("I won")
+elif take == 1 and pick == 0:
+    print("Computer Won")
+elif take == 2 and pick == 1:
+    print("Computer Won")
+elif take == 2 and pick == 2:
     print("It is a draw")
 
 
