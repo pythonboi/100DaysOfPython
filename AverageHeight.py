@@ -19,18 +19,29 @@ student_heights = input("Input a list of student heights ").split()
 
 for n in range(0, len(student_heights)):
     student_heights[n] = int(student_heights[n])
-# print(student_heights[n])
-addNumber = 0
+print(student_heights)
+# addNumber = 0
+#
+# for h in student_heights:
+#     addNumber += h
+# # print(addNumber)
+#
+# totalCount = 0
+# for m in student_heights:
+#     totalCount = totalCount + 1
+# # print(totalCount)
+#
+# avegCount = round(addNumber / totalCount)
+#
+# print(f"Average number is: {avegCount}")
 
-for h in student_heights:
-    addNumber += h
-# print(addNumber)
+# find the Highest number
 
-totalCount = 0
-for m in student_heights:
-    totalCount = totalCount + 1
-# print(totalCount)
+high = 0
 
-avegCount = round(addNumber / totalCount)
+for number in student_heights:
+    if number > high:
+        high = number
+print(f"The highest score in class: {high}")
 
-print(f"Average number is: {avegCount}")
+
