@@ -21,6 +21,7 @@ mulRandom = [letters, numbers, symbols]
 # sum all the integer together to have the total number and left of the character symbols to make
 allSum = nr_letters + nr_symbols + nr_numbers
 
+# Create a list variable
 passwd = []
 
 
@@ -31,7 +32,6 @@ synt = 0
 nmb = 0
 
 for char in letters:
-    # print(count)
     if count < nr_letters:
         count += 1
         passwd.append(random.choice(letters))
@@ -50,5 +50,8 @@ for num in numbers:
 
 lstStn = "".join(passwd)
 
-print(lstStn)
+# print("\n")
+
+print(f"Here is your password: {lstStn}")
+
 
