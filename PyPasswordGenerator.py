@@ -20,12 +20,9 @@ mulRandom = [letters, numbers, symbols]
 
 # sum all the integer together to have the total number and left of the character symbols to make
 allSum = nr_letters + nr_symbols + nr_numbers
-# print(allSum)
-# print(nr_letters)
 
 passwd = []
 
-# print(len(passwd))
 
 # Create a counter variable to be able to loop through the number of sequence needed
 
@@ -55,31 +52,3 @@ lstStn = "".join(passwd)
 
 print(lstStn)
 
-
-
-
-
-# for name in letters:  # , symbols, numbers:
-#
-#     if count < allSum:
-#         count += 1
-#         lRandom = random.choice(letters)
-#         passwd.append(lRandom)
-# # print(count)
-#
-#
-# for chck in symbols:
-#     if len(passwd) < allSum:
-#         sRandom = random.choice(symbols)
-#         passwd.append(sRandom)
-# for n in numbers:
-#     if len(passwd) < allSum:
-#         nNum = random.choice(numbers)
-#         passwd.append(nNum)
-#
-# print(f'{lRandom}{sRandom}{nNum}')
-
-# print(passwd)
-
-# Hard Level - Order of characters randomised:
-# e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
