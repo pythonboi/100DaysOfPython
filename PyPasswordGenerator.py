@@ -50,7 +50,6 @@ for num in numbers:
 
 lstStn = "".join(passwd)
 
-# print("\n")
 
 print(f"Here is your password: {lstStn}")
 
