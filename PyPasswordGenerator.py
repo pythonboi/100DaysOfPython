@@ -22,35 +22,65 @@ mulRandom = [letters, numbers, symbols]
 allSum = nr_letters + nr_symbols + nr_numbers
 
 # Create a list variable
-passwd = []
+# passwd = []
+#
+#
+# # Create a counter variable to be able to loop through the number of sequence needed
+#
+# count = 0
+# synt = 0
+# nmb = 0
+#
+# for char in letters:
+#     if count < nr_letters:
+#         count += 1
+#         passwd.append(random.choice(letters))
+#
+# for sym in symbols:
+#     if synt < nr_symbols:
+#         synt += 1
+#         passwd.append(random.choice(symbols))
+#
+# for num in numbers:
+#     if nmb < nr_numbers:
+#         nmb += 1
+#         passwd.append(random.choice(numbers))
+#
+# # convert the list to a string using the join function
+#
+# lstStn = "".join(passwd)
+#
+#
+# print(f"Here is your password: {lstStn}")
 
 
-# Create a counter variable to be able to loop through the number of sequence needed
+# Making the Password More Stronger and Harder to Guess
 
-count = 0
-synt = 0
-nmb = 0
+password = ""
 
-for char in letters:
-    if count < nr_letters:
-        count += 1
-        passwd.append(random.choice(letters))
+for char in range(0, nr_letters):
+    password += random.choice(letters)
 
-for sym in symbols:
-    if synt < nr_symbols:
-        synt += 1
-        passwd.append(random.choice(symbols))
+for sym in range(0, nr_symbols):
+    password += random.choice(symbols)
 
-for num in numbers:
-    if nmb < nr_numbers:
-        nmb += 1
-        passwd.append(random.choice(numbers))
+for numb in range(0, nr_numbers):
+    password += random.choice(numbers)
 
-# convert the list to a string using the join function
+print(password)
 
-lstStn = "".join(passwd)
+print(f"Here is your password: {password}")
+print("Note this password can be easily cracked")
 
+print("\n")
 
-print(f"Here is your password: {lstStn}")
+chPass = ""
 
+if len(password) == allSum:
+    for i in password:
+        newPass = random.choice(password)
+        chPass += newPass
 
+print(chPass)
+print("Here is much stronger password, very hard to crack")
+print(f"Here is your new password: {chPass}")
