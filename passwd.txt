@@ -8,3 +8,13 @@ franke@yahoo.com
 UserAccount
 Pham
 Password: *ss!%a3iseQ3
+Email_Account:
+funnyyou@excite.com
+UserAccount:
+damilola
+Password: 3UL8p(LUJa34y3
+Email_Account:
+name@hotmail.com
+UserAccount:
+Femi
+Password: zLh232E%%ah92E9
