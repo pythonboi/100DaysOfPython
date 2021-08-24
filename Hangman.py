@@ -11,7 +11,8 @@ chosen_word = random.choice(word_list)
 # Creating an empty list
 display = []
 
-print(chosen_word)
+# Printing out the guess word
+print(f"Psst, the guess word is:", chosen_word)
 
 # Print out the Guess Letter
 print("Guess a Letter: ", end="")
@@ -27,23 +28,17 @@ count = 0
 for char in chosen_word:
     # display += "_"
     display.append("_")
-print(display)
+# print(display)
 
 # for num in range(len(chosen_word)):
 #     # for check in chosen_word:
 #     count = count + 1
 #     print(count)
+
+# Making a For loop to count the number of guess and make an index of that number with the missing blanks
+
 for check in range(len(chosen_word)):
     if guess in chosen_word[check]:
         display[check] = guess
-
-
-    # for check in chosen_word:
-    #    # print(num)
-    #     if guess in check:
-    #         print(num)
-    #         print("Yes")
-    #     else:
-    #         print("No")
 
 print(display)
