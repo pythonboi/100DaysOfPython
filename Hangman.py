@@ -11,39 +11,30 @@ chosen_word = random.choice(word_list)
 # Creating an empty list
 display = []
 
-print(chosen_word)
+# Printing out the guess word
+print(f"Psst, the guess word is:", chosen_word)
 
-# Print out the Guess Letter
-print("Guess a Letter: ", end="")
-
-# Take input from the user from the Keyboard
-guess = input()
-
-# change the input character from Capital letter to Lowercase letter of the use input
-guess = guess.lower()
-
-count = 0
-
+# For loop for creating the dash sign
 for char in chosen_word:
     # display += "_"
     display.append("_")
-print(display)
+# print(display)
 
-# for num in range(len(chosen_word)):
-#     # for check in chosen_word:
-#     count = count + 1
-#     print(count)
-for check in range(len(chosen_word)):
-    if guess in chosen_word[check]:
-        display[check] = guess
+while True:
 
+    # Print out the Guess Letter
+    print("Guess a Letter: ", end="")
 
-    # for check in chosen_word:
-    #    # print(num)
-    #     if guess in check:
-    #         print(num)
-    #         print("Yes")
-    #     else:
-    #         print("No")
+    # Take input from the user from the Keyboard
+    guess = input()
 
-print(display)
+    # change the input character from Capital letter to Lowercase letter of the use input
+    guess = guess.lower()
+
+    # Making a For loop to count the number of guess and make an index of that number with the missing blanks
+
+    for check in range(len(chosen_word)):
+        if guess in chosen_word[check]:
+            display[check] = guess
+
+    print(display)
