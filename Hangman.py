@@ -37,9 +37,17 @@ while True:
         if guess in chosen_word[check]:
             display[check] = guess
 
-    for count in range(len(display)):
-        if count == len(chosen_word):
-            print("You have won!")
-            break
-
     print(display)
+
+    counter = []
+
+    for count in display:
+        if count in chosen_word:
+            counter += count
+
+    if counter == display:
+        print("You Won!")
+        break
+
+    # print(counter)
+# print("You Won")
