@@ -1,5 +1,62 @@
 import random
 
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
 # Create a List
 
 word_list = ["aardvark", "baboon", "camel"]
@@ -39,12 +96,14 @@ while True:
 
     print(display)
 
+    # create a counter list to use to verify the display list if no more item left
     counter = []
 
+    # For loop use for looping through display list
     for count in display:
         if count in chosen_word:
             counter += count
-
+    # comparing and validating the counter list against the display to make sure no more blank space is left
     if counter == display:
         print("You Won!")
         break
