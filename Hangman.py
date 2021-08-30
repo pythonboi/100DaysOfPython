@@ -68,6 +68,9 @@ chosen_word = random.choice(word_list)
 # Creating an empty list
 display = []
 
+# Create a variable to use for number of lives
+lives = 6
+
 # Printing out the guess word
 print(f"Psst, the guess word is:", chosen_word)
 
@@ -76,6 +79,11 @@ for char in chosen_word:
     # display += "_"
     display.append("_")
 # print(display)
+
+# for name in chosen_word:
+#     if guess not in name:
+#         lives -= 1
+#     print(lives)
 
 while True:
 
@@ -93,7 +101,18 @@ while True:
     for check in range(len(chosen_word)):
         if guess in chosen_word[check]:
             display[check] = guess
+    # Check if guess is not in the chosen word
+    if guess not in chosen_word:
+        lives -= 1
+    # Check for no lives and exit the loop
+    if lives == 0:
+        print(f"You Loose!, you now have {lives} lives left")
+        break
 
+    # for name in range(lives):
+    #     if guess not in chosen_word:
+    #         lives -= 1
+    print(lives)
     print(display)
 
     # create a counter list to use to verify the display list if no more item left
