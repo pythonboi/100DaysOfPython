@@ -1,61 +1,61 @@
 import random
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+# stages = ['''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  / \  |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  /    |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|   |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#   |   |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#   O   |
+#       |
+#       |
+#       |
+# =========
+# ''', '''
+#   +---+
+#   |   |
+#       |
+#       |
+#       |
+#       |
+# =========
+# ''']
 
 # Create a List
 
@@ -106,16 +106,15 @@ while True:
     # Check if guess is not in the chosen word
     if guess not in chosen_word:
         lives -= 1
-        #lives[stages]
+        # Print out the ASCII stages index base on the number of lives left as a value for the list (stages)
+        print(stages[lives])
 
     # Check for no lives and exit the loop
     if lives == 0:
         print(f"You Loose!, you now have {lives} lives left")
-        print(stages[lives])
         break
 
-    print(lives)
-    print(stages[lives])
+    # print(lives)
     print(display)
 
     # create a counter list to use to verify the display list if no more item left
@@ -129,4 +128,3 @@ while True:
     if counter == display:
         print("You Won!")
         break
-
