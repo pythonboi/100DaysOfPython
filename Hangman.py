@@ -101,9 +101,13 @@ while True:
     for check in range(len(chosen_word)):
         if guess in chosen_word[check]:
             display[check] = guess
+
+    stage = ''
     # Check if guess is not in the chosen word
     if guess not in chosen_word:
         lives -= 1
+        #lives[stages]
+
     # Check for no lives and exit the loop
     if lives == 0:
         print(f"You Loose!, you now have {lives} lives left")
@@ -113,6 +117,7 @@ while True:
     #     if guess not in chosen_word:
     #         lives -= 1
     print(lives)
+    print(stages[lives])
     print(display)
 
     # create a counter list to use to verify the display list if no more item left
