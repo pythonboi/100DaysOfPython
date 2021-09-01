@@ -111,11 +111,9 @@ while True:
     # Check for no lives and exit the loop
     if lives == 0:
         print(f"You Loose!, you now have {lives} lives left")
+        print(stages[lives])
         break
 
-    # for name in range(lives):
-    #     if guess not in chosen_word:
-    #         lives -= 1
     print(lives)
     print(stages[lives])
     print(display)
@@ -132,5 +130,3 @@ while True:
         print("You Won!")
         break
 
-    # print(counter)
-# print("You Won")
