@@ -1,4 +1,7 @@
 import random
+import hangman_art
+import hangman_words
+
 
 # stages = ['''
 #   +---+
@@ -59,11 +62,13 @@ import random
 
 # Create a List
 
-word_list = ["aardvark", "baboon", "camel"]
+# Print the logo from the hangman_art
+print(random.choice(hangman_art.logos))
 
-# Randomly select the word in the list to a variable
+# word_list = ["aardvark", "baboon", "camel"]
 
-chosen_word = random.choice(word_list)
+# Randomly select word from the word_list, imported from the hangman_words
+chosen_word = random.choice(hangman_words.word_list)
 
 # Creating an empty list
 display = []
@@ -72,7 +77,7 @@ display = []
 lives = 6
 
 # Printing out the guess word
-print(f"Psst, the guess word is:", chosen_word)
+print(f"Psst, the guess word is:", {chosen_word})
 
 # For loop for creating the dash sign
 for char in chosen_word:
@@ -80,10 +85,6 @@ for char in chosen_word:
     display.append("_")
 # print(display)
 
-# for name in chosen_word:
-#     if guess not in name:
-#         lives -= 1
-#     print(lives)
 
 while True:
 
@@ -107,7 +108,7 @@ while True:
     if guess not in chosen_word:
         lives -= 1
         # Print out the ASCII stages index base on the number of lives left as a value for the list (stages)
-        print(stages[lives])
+        print(hangman_art.stages[lives])
 
     # Check for no lives and exit the loop
     if lives == 0:
