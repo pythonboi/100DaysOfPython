@@ -27,11 +27,17 @@ def greet(city, name, location):
 
 greet(location="canada", name="hafeez", city="Toronto")
 
+import math
+
 
 # Write your code below this line 👇
 def paint_calc(height, width, cover):
-    numbOfCans = (height * width) / coverage
-    print(round(numbOfCans))
+    numbOfCans = (height * width) / cover
+    print(numbOfCans)
+    rand = round(numbOfCans)
+    ran = math.ceil(numbOfCans)
+    print(f"You will need {rand} cans of paint")
+    print(f"You will need {ran} cans of paint")
 
 
 # Write your code above this line 👆
