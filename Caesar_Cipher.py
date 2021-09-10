@@ -9,12 +9,31 @@ shift = int(input("Type the shift number:\n"))
 def encrypt(text, shift):
     count_text = len(text)
     move = []
-    for run in range(0, count_text):
+
+    for m in range(0, count_text):
         move += alphabet[shift]
-        if run in move:
-            move += alphabet[shift] + 1
+        alphabet[shift] = alphabet[shift + 1]
+        shift = shift + 1
 
     print(move)
+
+    # for run in range(0, count_text):
+    #     move += alphabet[shift]
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #     for check in move:
+    #         if check in move:
+    #             newShift = alphabet[move] + 1
+    #             newShift += 1
+    #             move += alphabet[newShift]
+    #
+    # print(move)
 
 
 encrypt(text=text, shift=shift)
