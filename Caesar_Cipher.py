@@ -17,23 +17,5 @@ def encrypt(text, shift):
 
     print(move)
 
-    # for run in range(0, count_text):
-    #     move += alphabet[shift]
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #
-    #     for check in move:
-    #         if check in move:
-    #             newShift = alphabet[move] + 1
-    #             newShift += 1
-    #             move += alphabet[newShift]
-    #
-    # print(move)
-
 
 encrypt(text=text, shift=shift)
