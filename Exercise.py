@@ -66,12 +66,17 @@ def encrypt(text, shift):
     for count in text:
         en = alphabet.index(count) + shift
         if en >= len(alphabet):
+            fw = alphabet.index("a") + shift
+            fw -= 1
             lw = alphabet.index(count) - shift
-            newEn += alphabet[lw]
+            newEn += alphabet[fw]
+            # newEn += alphabet[nw]
         else:
             newEn += alphabet[en]
-        #print(en)
+        # print(en)
     print(newEn)
+    print(alphabet.index("a"))
+
 
 # TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.
 # e.g.
