@@ -52,6 +52,7 @@ shift = int(input("Type the shift number:\n"))
 
 # BETTER COPY
 
+
 def encrypt(text, shift):
     newEn = ''
     for count in text:
@@ -65,7 +66,7 @@ def encrypt(text, shift):
         else:
             newEn += alphabet[en]
         # print(en)
-    print(newEn)
+    print(f"The encode text is {newEn}")  # newEn)
 
 
 def decrypt(text, shift):
@@ -74,9 +75,10 @@ def decrypt(text, shift):
         getDecry = alphabet.index(check) - shift
         deNew += alphabet[getDecry]
 
-    print(deNew)
+    print(f"The decoded text is {deNew}")
 
 
-encrypt(text=text, shift=shift)
-
-decrypt(text=text, shift=shift)
+if direction == "encode":
+    encrypt(text=text, shift=shift)
+elif direction == "decode":
+    decrypt(text=text, shift=shift)
