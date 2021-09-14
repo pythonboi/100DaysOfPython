@@ -73,9 +73,10 @@ def decrypt(text, shift):
     for check in text:
         getDecry = alphabet.index(check) - shift
         deNew += alphabet[getDecry]
+
     print(deNew)
 
 
- encrypt(text=text, shift=shift)
+encrypt(text=text, shift=shift)
 
 decrypt(text=text, shift=shift)
