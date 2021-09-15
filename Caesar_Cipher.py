@@ -5,7 +5,7 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-
+# print(len(alphabet))
 # newText = text.split()
 #
 #
@@ -57,21 +57,35 @@ def encrypt(text, shift):
     newEn = ''
     for count in text:
         en = alphabet.index(count) + shift
-        if en >= len(alphabet):
-            fw = alphabet.index("a") + shift
-            fw -= 1
-            lw = alphabet.index(count) - shift
-            newEn += alphabet[fw]
+        getLen = len(alphabet)
+        if en >= getLen:
+            total = en - getLen
+
+            fw = alphabet[total]
+            newEn += fw
+
+        # if en >= len(alphabet):
+            # fw = alphabet.index("a") + shift
+            # fw -= 1
+            # lw = alphabet.index(count) - shift
+            # newEn += alphabet[fw]
             # newEn += alphabet[nw]
         else:
             newEn += alphabet[en]
         # print(en)
+    # print(total)
+    # print(fw)
     print(f"The encode text is {newEn}")  # newEn)
 
 
 def decrypt(text, shift):
     deNew = ''
     for check in text:
+        # meCheck = alphabet.index(check) + shift
+        # if meCheck >= 25:
+
+        # if alphabet[check] >= 25:
+        #     alphabet.index('a')
         getDecry = alphabet.index(check) - shift
         deNew += alphabet[getDecry]
 
