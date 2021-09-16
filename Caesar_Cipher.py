@@ -5,6 +5,7 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
+
 #
 #
 # def encrypt(text, shift):
@@ -50,33 +51,56 @@ shift = int(input("Type the shift number:\n"))
 
 # BETTER COPY/Solution
 
+#
+# def encrypt(text, shift):
+#     newEn = ''
+#     for count in text:
+#         en = alphabet.index(count) + shift
+#         getLen = len(alphabet)
+#         if en >= getLen:
+#             total = en - getLen
+#             fw = alphabet[total]
+#             newEn += fw
+#
+#         else:
+#             newEn += alphabet[en]
+#
+#     print(f"The encode text is {newEn}")  # newEn)
+#
+#
+# def decrypt(text, shift):
+#     deNew = ''
+#     for check in text:
+#         getDecry = alphabet.index(check) - shift
+#         deNew += alphabet[getDecry]
+#
+#     print(f"The decoded text is {deNew}")
+#
+#
+# if direction == "encode":
+#     encrypt(text=text, shift=shift)
+# elif direction == "decode":
+#     decrypt(text=text, shift=shift)
 
-def encrypt(text, shift):
-    newEn = ''
-    for count in text:
-        en = alphabet.index(count) + shift
-        getLen = len(alphabet)
-        if en >= getLen:
-            total = en - getLen
-            fw = alphabet[total]
-            newEn += fw
+# Combining all the function and statement to one function call
 
-        else:
-            newEn += alphabet[en]
+def caesar(text, shift, direction):
+    codeChar = ''
+    if direction == 'encode':
+        for me in text:
+            ch = alphabet.index(me) + shift
+            if ch > len(alphabet):
+                alpLeft = ch - len(alphabet)
+                # ch - len(alphabet)
+                codeChar += alphabet[alpLeft]
+        print(f'The encode code is {codeChar}')
 
-    print(f"The encode text is {newEn}")  # newEn)
-
-
-def decrypt(text, shift):
-    deNew = ''
-    for check in text:
-        getDecry = alphabet.index(check) - shift
-        deNew += alphabet[getDecry]
-
-    print(f"The decoded text is {deNew}")
+    elif direction == 'decode':
+        decChar = ''
+        for new in text:
+            deco = alphabet.index(new) - shift
+            decChar += alphabet[deco]
+        print(f'The decode code is {decChar}')
 
 
-if direction == "encode":
-    encrypt(text=text, shift=shift)
-elif direction == "decode":
-    decrypt(text=text, shift=shift)
+caesar(text=text, shift=shift, direction=direction)
