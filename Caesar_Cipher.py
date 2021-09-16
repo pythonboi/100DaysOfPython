@@ -93,14 +93,16 @@ def caesar(text, shift, direction):
                 alpLeft = ch - len(alphabet)
                 # ch - len(alphabet)
                 codeChar += alphabet[alpLeft]
-        print(f'The encode code is {codeChar}')
+            else:
+                codeChar += alphabet[ch]
+        print(f'The encoded text is {codeChar}')
 
     elif direction == 'decode':
         decChar = ''
         for new in text:
             deco = alphabet.index(new) - shift
             decChar += alphabet[deco]
-        print(f'The decode code is {decChar}')
+        print(f'The decoded text is {decChar}')
 
 
 caesar(text=text, shift=shift, direction=direction)
