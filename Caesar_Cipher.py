@@ -10,13 +10,21 @@ text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
 
+# create a function for 3 parameters text, shift, direction
 def caesar(text, shift, direction):
     codeChar = ''
+    # check and validate direction
     if direction == 'encode':
+        # loop through the text
         for me in text:
+            # check shift value greater than the len of alphabet
             if shift > len(alphabet):
                 shift = shift % len(alphabet)
-            ch = alphabet.index(me) + shift
+            # checking the value of the alphabet and increment with value of shift
+            if ' ' in text:
+                print('Yes')
+            else:
+                ch = alphabet.index(me) + shift
             if ch >= len(alphabet):
                 alpLeft = ch - len(alphabet)
                 codeChar += alphabet[alpLeft]
