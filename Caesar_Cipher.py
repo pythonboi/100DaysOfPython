@@ -21,10 +21,15 @@ def caesar(text, shift, direction):
             if shift > len(alphabet):
                 shift = shift % len(alphabet)
             # checking the value of the alphabet and increment with value of shift
-            if ' ' in text:
-                print('Yes')
-            else:
-                ch = alphabet.index(me) + shift
+            if ' ' not in alphabet:
+                change = me.strip()
+                print(change)
+                newChar = alphabet.index(change) + shift
+                codeChar += alphabet[newChar]
+                # print('Yes')
+                # getContent = alphabet.index(me) # + shift
+                # codeChar += alphabet[getContent]
+            ch = alphabet.index(me) + shift
             if ch >= len(alphabet):
                 alpLeft = ch - len(alphabet)
                 codeChar += alphabet[alpLeft]
