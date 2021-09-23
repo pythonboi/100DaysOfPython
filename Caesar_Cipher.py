@@ -18,24 +18,26 @@ def caesar(text, shift, direction):
         # loop through the text
         for me in text:
             # check shift value greater than the len of alphabet
+
             if shift > len(alphabet):
                 shift = shift % len(alphabet)
             # checking the value of the alphabet and increment with value of shift
-            if ' ' not in alphabet:
-                change = me.strip()
-                print(change)
-                newChar = alphabet.index(change) + shift
-                codeChar += alphabet[newChar]
-                # print('Yes')
-                # getContent = alphabet.index(me) # + shift
-                # codeChar += alphabet[getContent]
-            ch = alphabet.index(me) + shift
-            if ch >= len(alphabet):
+            if me in alphabet:
+                ch = alphabet.index(me) + shift
+
+            else:
+                codeChar += me
+                # ch = alphabet.index(me) + shift
+
+            if ch > len(alphabet):
                 alpLeft = ch - len(alphabet)
                 codeChar += alphabet[alpLeft]
             else:
                 codeChar += alphabet[ch]
+
         print(f'The encoded text is {codeChar}')
+
+        # for check in text:
 
     elif direction == 'decode':
         decChar = ''
@@ -43,8 +45,11 @@ def caesar(text, shift, direction):
             if shift > len(alphabet):
                 shift = shift % len(alphabet)
                 # After code modification
-            deco = alphabet.index(new) - shift
-            decChar += alphabet[deco]
+            if new not in alphabet:
+                decChar += new
+            else:
+                deco = alphabet.index(new) - shift
+                decChar += alphabet[deco]
         print(f'The decoded text is {decChar}')
 
 
