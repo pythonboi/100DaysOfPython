@@ -9,48 +9,57 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
+while True:
 
-# create a function for 3 parameters text, shift, direction
-def caesar(text, shift, direction):
-    codeChar = ''
-    # check and validate direction
-    if direction == 'encode':
-        # loop through the text
-        for me in text:
-            # check shift value greater than the len of alphabet
+    again = input("Type 'yes' if you want to go again. Otherwise type 'no'. ""\n").lower()
 
-            if shift > len(alphabet):
-                shift = shift % len(alphabet)
-            # checking the value of the alphabet and increment with value of shift
-            if me in alphabet:
-                ch = alphabet.index(me) + shift
+    if again == 'yes':
 
-            else:
-                codeChar += me
-                # ch = alphabet.index(me) + shift
+        direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+        text = input("Type your message:\n").lower()
+        shift = int(input("Type the shift number:\n"))
 
-            if ch > len(alphabet):
-                alpLeft = ch - len(alphabet)
-                codeChar += alphabet[alpLeft]
-            else:
-                codeChar += alphabet[ch]
+        # create a function for 3 parameters text, shift, direction
 
-        print(f'The encoded text is {codeChar}')
+        def caesar(text, shift, direction):
+            codeChar = ''
+            # check and validate direction
+            if direction == 'encode':
+                # loop through the text
+                for me in text:
+                    if me not in alphabet:
+                        codeChar += me
+                    else:
+                        ch = alphabet.index(me) + shift
+                    # check shift value greater than the len of alphabet
 
-        # for check in text:
+                    if shift > len(alphabet):
+                        shift = shift % len(alphabet)
 
-    elif direction == 'decode':
-        decChar = ''
-        for new in text:
-            if shift > len(alphabet):
-                shift = shift % len(alphabet)
-                # After code modification
-            if new not in alphabet:
-                decChar += new
-            else:
-                deco = alphabet.index(new) - shift
-                decChar += alphabet[deco]
-        print(f'The decoded text is {decChar}')
+                    if ch > len(alphabet):
+                        alpLeft = ch - len(alphabet)
+                        codeChar += alphabet[alpLeft]
+                    else:
+                        codeChar += alphabet[ch]
+
+                print(f'The encoded text is {codeChar}')
+
+            elif direction == 'decode':
+                decChar = ''
+                for new in text:
+                    if shift > len(alphabet):
+                        shift = shift % len(alphabet)
+                        # After code modification
+                    if new not in alphabet:
+                        decChar += new
+                    else:
+                        deco = alphabet.index(new) - shift
+                        decChar += alphabet[deco]
+                print(f'The decoded text is {decChar}')
+    elif again == "no":
+        exit()
+    else:
+        print("Please answer 'yes' or 'no'")
 
 
 caesar(text=text, shift=shift, direction=direction)
