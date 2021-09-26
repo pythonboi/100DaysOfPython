@@ -74,6 +74,7 @@ while True:
         caesar(text=text, shift=shift, direction=direction)
     # exit if user not interested to encode or decode
     elif again == "no":
+        print("Goodbye")
         exit()
     # make sure users response to yes or no
     else:
