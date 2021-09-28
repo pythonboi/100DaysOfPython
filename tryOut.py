@@ -44,15 +44,25 @@ Grade1 = "Outstanding"
 # Scores 81 - 90:
 Grade2 = "Exceeds Expectations"
 #
-# Scores 71 - 80: Grade = "Acceptable"
+# Scores 71 - 80:
 #
-# Scores 70 or lower: Grade = "Fail"
+Grade3 = "Acceptable"
+#
+# Scores 70 or lower:
+Grade4 = "Fail"
 
 # TODO-1: Create an empty dictionary called student_grades.
 student_grades = {}
 
 # TODO-2: Write your code below to add the grades to student_grades.👇
 for k, v in student_scores.items():
-
+    if v >= 91 and v <=100:
+        student_grades[k] = Grade1
+    elif v >= 81 and v <=90:
+        student_grades[k] = Grade2
+    elif v >= 71 and v <= 80:
+        student_grades[k] = Grade3
+    else:
+        student_grades[k] = Grade4
 # 🚨 Don't change the code below 👇
 print(student_grades)
