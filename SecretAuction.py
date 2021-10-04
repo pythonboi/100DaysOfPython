@@ -4,7 +4,7 @@ import os
 from art import logo2
 from replit import clear
 
-print(logo2)
+# print(logo2)
 
 print("Welcome to the Secret Auction program")
 
@@ -37,14 +37,22 @@ while True:
 
 print(auction)
 
-getHigh = ''
+getHigh = []
+
+hNum = int()
 
 for check, val in auction.items():
-    if val >= val:
-        highVal = val
-    print(highVal)
-# highBid = auction.get(max(auction))
+    getHigh.append(val)
+    for name in getHigh:
+        if name > hNum:
+            hNum = name
+for m, n in auction.items():
+    if n == hNum:
+        dKey = m
+print(getHigh)
 
-# print(f"The winner is  with a bid of {highBid}.")
+print(hNum)
+
+print(f"The winner is {dKey} with a bid of {hNum}.")
 
 # print(type(auction))
