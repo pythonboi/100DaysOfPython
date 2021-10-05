@@ -12,9 +12,11 @@ print("Welcome to the Secret Auction program")
 # Create a an empty dictionary for auction
 auction = {}
 
+# create a variable for name and bid
 name = input("What is your name?: ").title()
 bid = int(input("What is your bid?: $"))
 
+# create a key and value from the name and bid entry from the user
 auction[name] = name
 auction[name] = bid
 
@@ -52,9 +54,6 @@ for check, val in auction.items():
             hNum = name
     if val == hNum:
         dKey = check
-# for m, n in auction.items():
-# if n == hNum:
-# dKey = m
 
 # Print the result from key and value from the dictionary
 print(f"The winner is {dKey} with a bid of {hNum}.")
