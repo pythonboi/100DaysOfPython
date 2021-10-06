@@ -56,4 +56,4 @@ for check, val in auction.items():
         dKey = check
 
 # Print the result from key and value from the dictionary
-print(f"The winner is {dKey} with a bid of {hNum}.")
+print(f"The winner is {dKey} with a bid of ${hNum}.")
