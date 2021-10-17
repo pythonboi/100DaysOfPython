@@ -1,10 +1,11 @@
 numb = False
 
+
 def primenumber(number):
     for numbers in range(2, number):
         if number % numbers != 0:
             numb = True
-    if numb = False:
+        # if numb = False:
         print("it is not a prime number")
     else:
         print("it is prime number")
@@ -32,12 +33,12 @@ primenumber(number=n)
 #     print("This is a prime number")
 # else:
 #     print("This is not a prime")
-        # prime.append(numbers)
-        #prime += numbers
-        #print(f"{number} it's a prime number")
-    # elif number % numbers == 0:
-    #     #notPrime.append(numbers)
-    #     #print(f"{number} it is not a prime")
+# prime.append(numbers)
+# prime += numbers
+# print(f"{number} it's a prime number")
+# elif number % numbers == 0:
+#     #notPrime.append(numbers)
+#     #print(f"{number} it is not a prime")
 # else:
 #     print("it is not a prime")
 
