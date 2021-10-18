@@ -29,8 +29,6 @@ operations = {
     "/": divide,
 }
 
-# operations["+"] = ["+"]
-# operations["+"] = add(n1=5, n2=5)
 
 num1 = int(input("What is the first number?: "))
 num2 = int(input("What is the second number? "))
@@ -39,7 +37,6 @@ for operation in operations:
     print(operation)
 
 signs = input("Pick an operation from the line above: ")
-# result = ''
 
 for symbol in operations:
     if signs == symbol:
