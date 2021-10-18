@@ -31,12 +31,13 @@ operations = {
 
 
 num1 = int(input("What is the first number?: "))
-num2 = int(input("What is the second number? "))
 
 for operation in operations:
     print(operation)
 
 signs = input("Pick an operation from the line above: ")
+
+num2 = int(input("What is the second number? "))
 
 for symbol in operations:
     if signs == symbol:
