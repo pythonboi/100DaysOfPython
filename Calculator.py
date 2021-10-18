@@ -46,3 +46,36 @@ for symbol in operations:
 
 
 print(f"{num1} {signs} {num2} = {finalResult}")
+
+questions = input(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to exit.: ")
+
+while True:
+
+    if questions == 'y':
+        # print(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to exit.: ")
+        signs = input("Pick an operation: ")
+
+        nxt = int(input("What is the next number?: "))
+
+        theSign = operations[signs]
+        theResult = theSign(finalResult, nxt)
+
+        print(f"{finalResult} {signs} {nxt} = {theResult}")
+
+    questions = input(f"Type 'y' to continue calculating with {theResult}, or type 'n' to exit.: ")
+
+    if questions == 'n':
+        break
+    # else:
+    #     print("Please enter 'y' for yes or 'n' for no and exit.")
+
+
+# ThirdOperation = input("Pick another operation: ")
+#
+# num3 = int(input("What is the next number?: "))
+#
+# ThirdPick = operations[ThirdOperation]
+#
+# thirdResult = ThirdPick(finalResult, num3)
+#
+# print(f"{finalResult} {ThirdOperation} {num3} = {thirdResult}")
