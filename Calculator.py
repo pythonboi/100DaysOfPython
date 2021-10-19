@@ -30,48 +30,57 @@ operations = {
 }
 
 
-num1 = int(input("What is the first number?: "))
+def calculator():
+    num1 = int(input("What is the first number?: "))
 
-for operation in operations:
-    print(operation)
+    for operation in operations:
+        print(operation)
 
-signs = input("Pick an operation from the line above: ")
+    signs = input("Pick an operation from the line above: ")
 
-num2 = int(input("What is the second number? "))
+    num2 = int(input("What is the second number? "))
 
-# For loop to verify the sign matches with the symbol in the operations dictionary
-for symbol in operations:
-    if signs == symbol:
-        result = operations[symbol]
-        finalResult = result(num1, num2)
+    # For loop to verify the sign matches with the symbol in the operations dictionary
+    for symbol in operations:
+        if signs == symbol:
+            result = operations[symbol]
+            finalResult = result(num1, num2)
+
+    print(f"{num1} {signs} {num2} = {finalResult}")
+
+    questions = input(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to start a new calculation.: ")
+
+    # Create a while loop for continuous calculation
+    while True:
+        # Check and validate the user input if yes
+        if questions == 'y':
+            # print(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to exit.: ")
+            signs = input("Pick an operation: ")
+
+            nxt = int(input("What is the next number?: "))
+
+            theSign = operations[signs]
+            theResult = theSign(finalResult, nxt)
+
+            print(f"{finalResult} {signs} {nxt} = {theResult}")
+
+        questions = input(
+            f"Type 'y' to continue calculating with {theResult}, or type 'n' to start a new calculation.: ")
+        # Check
+        if questions == 'y' and finalResult != theResult:
+            finalResult = theResult
+            # print(finalResult)
+
+        # Break out of the loop if n alphabet is selected
+        if questions == 'n':
+            break
 
 
-print(f"{num1} {signs} {num2} = {finalResult}")
+calculator()
 
-questions = input(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to exit.: ")
-
-# Create a while loop for continuous calculation
-while True:
-
-    if questions == 'y':
-        # print(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to exit.: ")
-        signs = input("Pick an operation: ")
-
-        nxt = int(input("What is the next number?: "))
-
-        theSign = operations[signs]
-        theResult = theSign(finalResult, nxt)
-
-        print(f"{finalResult} {signs} {nxt} = {theResult}")
-
-    questions = input(f"Type 'y' to continue calculating with {theResult}, or type 'n' to exit.: ")
-
-    # Break out of the loop if n alphabet is selected
-    if questions == 'n':
-        break
-    # else:
-    #     print("Please enter 'y' for yes or 'n' for no and exit.")
-
+# print(f"{final}")
+# else:
+#     print("Please enter 'y' for yes or 'n' for no and exit.")
 
 # ThirdOperation = input("Pick another operation: ")
 #
