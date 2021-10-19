@@ -39,6 +39,7 @@ signs = input("Pick an operation from the line above: ")
 
 num2 = int(input("What is the second number? "))
 
+# For loop to verify the sign matches with the symbol in the operations dictionary
 for symbol in operations:
     if signs == symbol:
         result = operations[symbol]
@@ -49,6 +50,7 @@ print(f"{num1} {signs} {num2} = {finalResult}")
 
 questions = input(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to exit.: ")
 
+# Create a while loop for continuous calculation
 while True:
 
     if questions == 'y':
@@ -64,6 +66,7 @@ while True:
 
     questions = input(f"Type 'y' to continue calculating with {theResult}, or type 'n' to exit.: ")
 
+    # Break out of the loop if n alphabet is selected
     if questions == 'n':
         break
     # else:
