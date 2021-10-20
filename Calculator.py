@@ -48,10 +48,14 @@ def calculator():
 
     print(f"{num1} {signs} {num2} = {finalResult}")
 
-    questions = input(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to start a new calculation.: ")
+    # questions = input(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to start a new calculation.: ")
 
     # Create a while loop for continuous calculation
     while True:
+
+        questions = input(
+            f"Type 'y' to continue calculating with {finalResult}, or type 'n' to start a new calculation.: ")
+
         # Check and validate the user input if yes
         if questions == 'y':
             # print(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to exit.: ")
@@ -73,6 +77,7 @@ def calculator():
 
         # Break out of the loop if n alphabet is selected
         if questions == 'n':
+            calculator()
             break
 
 
