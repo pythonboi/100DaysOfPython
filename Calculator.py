@@ -91,17 +91,3 @@ def calculator():
 
 
 calculator()
-
-# print(f"{final}")
-# else:
-#     print("Please enter 'y' for yes or 'n' for no and exit.")
-
-# ThirdOperation = input("Pick another operation: ")
-#
-# num3 = int(input("What is the next number?: "))
-#
-# ThirdPick = operations[ThirdOperation]
-#
-# thirdResult = ThirdPick(finalResult, num3)
-#
-# print(f"{finalResult} {ThirdOperation} {num3} = {thirdResult}")
