@@ -73,7 +73,7 @@ def calculator():
 
             print(f"{finalResult} {signs} {nxt} = {theResult}")
 
-            questions = input(
+        questions = input(
                 f"Type 'y' to continue calculating with {theResult}, or type 'n' to start a new calculation.: ")
         # Check
         if questions == 'y' and finalResult != theResult:
