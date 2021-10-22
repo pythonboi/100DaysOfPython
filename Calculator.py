@@ -43,7 +43,7 @@ def calculator():
 
     signs = input("Pick an operation from the line above: ")
 
-    num2 = float(input("What is the second number? "))
+    num2 = float(input("What is the next number? "))
 
     # For loop to verify the sign matches with the symbol in the operations dictionary
     for symbol in operations:
@@ -53,7 +53,8 @@ def calculator():
 
     print(f"{num1} {signs} {num2} = {finalResult}")
 
-    questions = input(f"Type 'y' to continue calculating with {finalResult}, or type 'n' to start a new calculation.: ")
+    questions = input(
+        f"Type 'y' to continue calculating with {finalResult}, or type 'n' to start a new calculation.: ")
 
     # Create a while loop for continuous calculation
     while True:
@@ -73,18 +74,19 @@ def calculator():
 
             print(f"{finalResult} {signs} {nxt} = {theResult}")
 
-        questions = input(
+            questions = input(
                 f"Type 'y' to continue calculating with {theResult}, or type 'n' to start a new calculation.: ")
         # Check
         if questions == 'y' and finalResult != theResult:
             finalResult = theResult
+            # signs = input("Pick an operation: ")
             # print(finalResult)
 
         # Break out of the loop if n alphabet is selected
         if questions == 'n':
             calculator()
             # break
-        elif questions != 'y' and questions != 'n':
+        if questions != 'y' and questions != 'n':
             break
         # else:
         #     break
