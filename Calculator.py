@@ -85,11 +85,8 @@ def calculator():
         # Break out of the loop if n alphabet is selected
         if questions == 'n':
             calculator()
-            # break
         if questions != 'y' and questions != 'n':
             break
-        # else:
-        #     break
 
 
 calculator()
