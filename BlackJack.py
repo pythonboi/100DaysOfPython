@@ -78,6 +78,11 @@ def calculate_score(user, computer):
     # return computer_cards[0] + computer_cards[1]
     print(sum(computer_cards))
 
+    for v in user_cards:
+        print(v)
+        if v == 11 and v == 10:
+            print(0)
+
 
 calculate_score(user_cards, computer_cards)
 
@@ -85,7 +90,6 @@ calculate_score(user_cards, computer_cards)
 
 # Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0
 # instead of the actual score. 0 will represent a blackjack in our game.
-
 
 
 # Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21,
