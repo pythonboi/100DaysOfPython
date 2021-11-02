@@ -78,9 +78,15 @@ def calculate_score(user, computer):
     # return computer_cards[0] + computer_cards[1]
     print(sum(computer_cards))
 
+    if sum(user_cards) == 21:
+        print(0)
+        return 0
+
     for v in user_cards:
+        print("Printing v from user_cards")
         print(v)
-        if v == 11 and v == 10:
+        if user_cards[0] == 11 and user_cards[1] == 10:
+            #print(sum(v))
             print(0)
 
 
