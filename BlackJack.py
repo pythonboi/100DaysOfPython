@@ -71,6 +71,7 @@ print(computer_cards)
 # Hint 6: Create a function called calculate_score() that takes a List of cards as input
 # and returns the score.
 
+
 def calculate_score(user, computer):
     # return sum(user_cards)
     print(sum(user_cards))
@@ -79,20 +80,35 @@ def calculate_score(user, computer):
     print(sum(computer_cards))
 
     if sum(user_cards) == 21:
-        print(0)
-        # return 0
+        print("BlackJack You Win")
+        # print(0)
+        return 0
 
     elif sum(computer_cards) == 21:
-        print(0)
-        # return 0
+        print("BlackJack Computer wins")
+        # print(0)
+        return 0
 
     if sum(user_cards) > 21:
         if user_cards[0] == 11 or user_cards[1] == 11:
             user_cards.remove(11)
             user_cards.append(1)
-            # print("You Loose")
+
+            print(sum(user_cards))
+
+    elif sum(user_cards) > 21:
+
+        print(f"You loose, your total cards is: ", sum(user_cards))
 
 
+while user_cards != 0:
+
+    deal = input("what to deal another card:? ").lower()
+
+    if deal == 'y':
+        user_cards.append(deal_card())
+        print(user_cards)
+        calculate_score(user_cards, computer_cards)
 
 
 # Look up the sum() function to help you do this.
@@ -108,6 +124,9 @@ calculate_score(user_cards, computer_cards)
 
 # Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0)
 # or if the user's score is over 21, then the game ends.
+
+
+# print(sum(user_cards))
 
 # Hint 10: If the game has not ended, ask the user if they want to draw another card.
 # If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
@@ -129,7 +148,6 @@ calculate_score(user_cards, computer_cards)
 
 # Hint 14: Ask the user if they want to restart the game.
 # If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
-
 
 
 #
