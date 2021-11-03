@@ -80,17 +80,20 @@ def calculate_score(user, computer):
 
     if sum(user_cards) == 21:
         print(0)
-        return 0
+        # return 0
 
-    for v in user_cards:
-        print("Printing v from user_cards")
-        print(v)
-        if user_cards[0] == 11 and user_cards[1] == 10:
-            #print(sum(v))
-            print(0)
+    elif sum(computer_cards) == 21:
+        print(0)
+        # return 0
+
+    if sum(user_cards) > 21:
+        if user_cards[0] == 11 or user_cards[1] == 11:
+            user_cards.remove(11)
+            user_cards.append(1)
+            # print("You Loose")
 
 
-calculate_score(user_cards, computer_cards)
+
 
 # Look up the sum() function to help you do this.
 
@@ -100,6 +103,8 @@ calculate_score(user_cards, computer_cards)
 
 # Hint 8: Inside calculate_score() check for an 11 (ace). If the score is already over 21,
 # remove the 11 and replace it with a 1. You might need to look up append() and remove().
+
+calculate_score(user_cards, computer_cards)
 
 # Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0)
 # or if the user's score is over 21, then the game ends.
@@ -124,3 +129,13 @@ calculate_score(user_cards, computer_cards)
 
 # Hint 14: Ask the user if they want to restart the game.
 # If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
+
+
+
+#
+# for v in user_cards:
+#     print("Printing v from user_cards")
+#     print(v)
+#     if user_cards[0] == 11 and user_cards[1] == 10:
+#         # print(sum(v))
+#         print(0)
