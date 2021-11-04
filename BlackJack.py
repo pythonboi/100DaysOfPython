@@ -73,11 +73,12 @@ print(computer_cards)
 
 
 def calculate_score(user, computer):
-    # return sum(user_cards)
-    print(sum(user_cards))
+    return sum(user_cards)
+    # print(sum(user_cards))
     # return user_cards[0] + user_cards[1]
     # return computer_cards[0] + computer_cards[1]
-    print(sum(computer_cards))
+    # print(sum(computer_cards))
+    return sum(computer_cards)
 
     if sum(user_cards) == 21:
         print("BlackJack You Win")
@@ -97,9 +98,17 @@ def calculate_score(user, computer):
             print(sum(user_cards))
 
     if sum(user_cards) > 21:
-
         print(f"You loose, your total cards is: ", sum(user_cards))
         exit()
+
+    if sum(computer_cards) > 21:
+        if computer_cards[0] == 11 or computer_cards[1] == 11:
+            computer_cards.remove(11)
+            computer_cards.append(1)
+            print(sum(computer_cards))
+
+    if sum(computer_cards) > 21 and sum(user_cards) < 21:
+        print("You win sum computer is", sum(computer_cards), "and user is ", sum(user_cards))
 
 
 # Look up the sum() function to help you do this.
@@ -116,7 +125,7 @@ calculate_score(user_cards, computer_cards)
 # Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0)
 # or if the user's score is over 21, then the game ends.
 
-while sum(user_cards) < 21:
+while sum(user_cards) < 21 and sum(computer_cards) < 21:
 
     deal = input("what to deal another card:? ").lower()
 
@@ -126,6 +135,12 @@ while sum(user_cards) < 21:
         calculate_score(user_cards, computer_cards)
 
     elif deal == 'n':
+        computer_cards.append(deal_card())
+        print(computer_cards)
+        calculate_score(user_cards, computer_cards)
+
+    elif deal != 'y' or deal != 'n':
+
         break
 
 # print(sum(user_cards))
