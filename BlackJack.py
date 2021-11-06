@@ -73,19 +73,17 @@ print(computer_cards)
 
 
 def calculate_score(user, computer):
-    return sum(user_cards)
     # print(sum(user_cards))
     # return user_cards[0] + user_cards[1]
     # return computer_cards[0] + computer_cards[1]
     # print(sum(computer_cards))
-    return sum(computer_cards)
 
-    if calculate_score(user_cards) == 21:
+    if user_cards == 21:
         print("BlackJack You Win")
         # print(0)
         # return 0
 
-    elif calculate_score(computer_cards) == 21:
+    elif computer_cards == 21:
         print("BlackJack Computer wins")
         # print(0)
         # return 0
@@ -107,8 +105,12 @@ def calculate_score(user, computer):
             computer_cards.append(1)
             print(sum(computer_cards))
 
-    if sum(computer_cards) > 21 and sum(user_cards) < 21:
-        print("You win sum computer is", sum(computer_cards), "and user is ", sum(user_cards))
+    # if sum(computer_cards) > 21 and sum(user_cards) < 21:
+        # print("You win, computer score is", sum(computer_cards), "and user is ", sum(user_cards))
+
+    return user_cards, computer_cards
+
+    # return sum(computer_cards)
 
 
 # Look up the sum() function to help you do this.
@@ -147,7 +149,7 @@ while sum(user_cards) <= 21:  # and
         elif sum(user_cards) > sum(computer_cards):
             print("You win", sum(user_cards))
             exit()
-        elif sum(computer_cards) > sum(user_cards) and sum(computer_cards)<= 21:
+        elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
             print("Computer wins", sum(computer_cards))
             exit()
 
