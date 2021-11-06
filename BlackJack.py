@@ -78,15 +78,32 @@ def calculate_score(user, computer):
     # return computer_cards[0] + computer_cards[1]
     # print(sum(computer_cards))
 
-    if user_cards == 21:
-        print("BlackJack You Win")
-        # print(0)
-        # return 0
+    if sum(user_cards) == 21:
+        if user_cards[0] == 11 or user_cards[1] == 10:
+            if user_cards[0] == 10 and user_cards[1] == 11:
+                print("BlackJack You Win")
+            print("BlackJack You Win")
 
-    elif computer_cards == 21:
-        print("BlackJack Computer wins")
-        # print(0)
-        # return 0
+        exit()
+
+    elif sum(computer_cards) == 21:
+        if computer_cards[0] == 11 or computer_cards[1] == 10:
+            if computer_cards[0] == 10 and computer_cards[1] == 11:
+                print("BlackJack Computer Wins")
+            print("BlackJack Computer Wins")
+
+        exit()
+
+    # if sum(user_cards) == 21:
+    #     print("BlackJack You Win")
+    #     # print(0)
+    #     # return 0
+    #     exit()
+    #
+    # elif sum(computer_cards) == 21:
+    #     print("BlackJack Computer wins")
+    #     # print(0)
+    #     exit()
 
     if sum(user_cards) > 21:
         if user_cards[0] == 11 or user_cards[1] == 11:
@@ -96,7 +113,8 @@ def calculate_score(user, computer):
             print(sum(user_cards))
 
     if sum(user_cards) > 21:
-        print(f"You loose, your total cards is: ", sum(user_cards))
+        print(f"You loose, your score is: ", sum(user_cards))
+        print("Computer score: ", sum(computer_cards))
         exit()
 
     if sum(computer_cards) > 21:
@@ -106,7 +124,7 @@ def calculate_score(user, computer):
             print(sum(computer_cards))
 
     # if sum(computer_cards) > 21 and sum(user_cards) < 21:
-        # print("You win, computer score is", sum(computer_cards), "and user is ", sum(user_cards))
+    # print("You win, computer score is", sum(computer_cards), "and user is ", sum(user_cards))
 
     return user_cards, computer_cards
 
@@ -137,25 +155,36 @@ while sum(user_cards) <= 21:  # and
         calculate_score(user_cards, computer_cards)
 
     elif deal == 'n':
+        if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
+            print("Computer Score: ", sum(computer_cards))
+            print("User Score: ", sum(user_cards))
+            exit()
         computer_cards.append(deal_card())
         print(computer_cards)
         calculate_score(user_cards, computer_cards)
         if sum(computer_cards) > 21 and sum(user_cards) < 21:
-            print("You win, Your Score is ", sum(user_cards))
-            print("Computer score is", sum(computer_cards))
+            print("You win, your Score is: ", sum(user_cards))
+            print("Computer score is:", sum(computer_cards))
             exit()
             # computer_cards.append(deal_card())
             # calculate_score(user_cards, computer_cards)
-        elif sum(user_cards) > sum(computer_cards):
-            print("You win", sum(user_cards))
-            exit()
+
         elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
             print("Computer wins", sum(computer_cards))
+            exit()
+        elif sum(computer_cards) < sum(user_cards) and sum(computer_cards) < 21:
+            computer_cards.append(deal_card())
+        elif sum(user_cards) > sum(computer_cards):
+            print("You win, your score is:", sum(user_cards))
+            print("Computer score is:", sum(computer_cards))
             exit()
 
     elif deal != 'y' or deal != 'n':
 
         break
+
+# play = input("Do you want restart the game:? ")
+
 
 # if sum(computer_cards) < 21:
 #     computer_cards.append(deal_card())
@@ -191,12 +220,3 @@ while sum(user_cards) <= 21:  # and
 
 # Hint 14: Ask the user if they want to restart the game.
 # If they answer yes, clear the console and start a new game of blackjack and show the logo from art.py.
-
-
-#
-# for v in user_cards:
-#     print("Printing v from user_cards")
-#     print(v)
-#     if user_cards[0] == 11 and user_cards[1] == 10:
-#         # print(sum(v))
-#         print(0)
