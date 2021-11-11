@@ -69,7 +69,7 @@ for num in range(len(computer_cards)):
         computer_cards.append(deal_card())
 
 
-# print(computer_cards)
+print(computer_cards)
 
 
 # Hint 6: Create a function called calculate_score() that takes a List of cards as input
@@ -189,9 +189,9 @@ while sum(user_cards) <= 21:  # and
             # computer_cards.append(deal_card())
             # calculate_score(user_cards, computer_cards)
 
-        elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
-            print("Computer wins", sum(computer_cards))
-            exit()
+        # elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
+        #     print("Computer wins", sum(computer_cards))
+        #     exit()
         elif sum(computer_cards) < sum(user_cards) and sum(computer_cards) < 21:
             computer_cards.append(deal_card())
             calculate_score(user_cards, computer_cards)
@@ -204,6 +204,11 @@ while sum(user_cards) <= 21:  # and
         elif sum(computer_cards) == 21 and sum(computer_cards) > sum(user_cards):
             print("Computer Win, Computer score is: ", sum(computer_cards))
             print("You score is: ", sum(user_cards))
+            exit()
+
+        elif sum(computer_cards) == sum(user_cards) and sum(computer_cards)< 21:
+            print(computer_cards)
+            print("Draw")
             exit()
 
     elif deal != 'y' or deal != 'n':
