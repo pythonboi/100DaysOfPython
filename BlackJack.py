@@ -69,7 +69,7 @@ for num in range(len(computer_cards)):
         computer_cards.append(deal_card())
 
 
-print(computer_cards)
+# print(computer_cards)
 
 
 # Hint 6: Create a function called calculate_score() that takes a List of cards as input
@@ -132,12 +132,13 @@ def calculate_score(user, computer):
     if sum(user_cards) > 21:
         print("You loose, your score is: ", sum(user_cards))
         print(computer_cards)
+
         print("Computer Win, Computer score: ", sum(computer_cards))
 
         exit()
 
     if sum(computer_cards) > 21:
-        print(computer_cards)
+        # print(computer_cards)
         print("Computer loose, computer score is: ", sum(computer_cards))
         print("You win, your score is: ", sum(user_cards))
         exit()
@@ -173,7 +174,7 @@ while sum(user_cards) <= 21:  # and
         print(user_cards)
         calculate_score(user_cards, computer_cards)
 
-    elif deal == 'n':
+    elif deal == 'n' or sum(computer_cards) < 21:
         if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
             print("Computer Win, Computer Score is: ", sum(computer_cards))
             print(computer_cards)
@@ -194,6 +195,7 @@ while sum(user_cards) <= 21:  # and
         #     exit()
         elif sum(computer_cards) < sum(user_cards) and sum(computer_cards) < 21:
             computer_cards.append(deal_card())
+            print(computer_cards)
             calculate_score(user_cards, computer_cards)
 
         elif sum(user_cards) > sum(computer_cards):
