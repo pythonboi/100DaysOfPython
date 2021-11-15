@@ -90,21 +90,28 @@ def calculate_score(user, computer):
                 print("BlackJack You Win")
             print("BlackJack You Win")
 
-        # exit()
+        # return 0
+
+        exit()
 
     elif sum(computer_cards) == 21:
         if computer_cards[0] == 11 and computer_cards[1] == 10:
             if computer_cards[0] == 10 and computer_cards[1] == 11:
                 print("BlackJack Computer Wins")
             print("BlackJack Computer Wins")
+        # return 0
 
-        # exit()
+        exit()
 
     # Here is where i moved the code from
+
+    # Thinking about this code if it is necessary or needed from the beginning role
+    # Ok the code below is needed during the deal counting for cards till it reach 21
 
     if sum(user_cards) == 21:
         print("You Win, your score is: ", sum(user_cards))
         print("Computer score is: ", sum(computer_cards))
+        # return "You win, your score is ", sum(user_cards)
         # print(0)
         # return 0
         # exit()
@@ -143,13 +150,7 @@ def calculate_score(user, computer):
         print("You win, your score is: ", sum(user_cards))
         exit()
 
-    # if sum(computer_cards) > 21 and sum(user_cards) < 21:
-    # print("You win, computer score is", sum(computer_cards), "and user is ", sum(user_cards))
-
     return user_cards, computer_cards
-
-    # return sum(computer_cards)
-
 
 # Look up the sum() function to help you do this.
 
@@ -174,7 +175,7 @@ while sum(user_cards) <= 21:  # and
         print(user_cards)
         calculate_score(user_cards, computer_cards)
 
-    elif deal == 'n' or sum(computer_cards) < 21:
+    elif deal == 'n': # or sum(computer_cards) < 21:
         if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
             print("Computer Win, Computer Score is: ", sum(computer_cards))
             print(computer_cards)
@@ -184,6 +185,7 @@ while sum(user_cards) <= 21:  # and
         # computer_cards.append(deal_card())
         # print(computer_cards)
         # calculate_score(user_cards, computer_cards)
+
         if sum(computer_cards) > 21 and sum(user_cards) < 21:
             print("You win, your Score is: ", sum(user_cards))
             print("Computer score is:", sum(computer_cards))
@@ -206,17 +208,17 @@ while sum(user_cards) <= 21:  # and
             break
             # exit()
 
-        elif sum(computer_cards) == 21 and sum(computer_cards) > sum(user_cards):
+        elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) == 21:
             print("Computer Win, Computer score is: ", sum(computer_cards))
             print("You score is: ", sum(user_cards))
             break
             # exit()
 
-        elif sum(computer_cards) == sum(user_cards) and sum(computer_cards) < 21:
-            print(computer_cards)
-            print("Draw")
-            break
-            # exit()
+        # elif sum(computer_cards) == sum(user_cards) and sum(computer_cards) < 21:
+        #     print(computer_cards)
+        #     print("Draw")
+        #     break
+        #     # exit()
 
     elif deal != 'y' or deal != 'n':
 
@@ -232,15 +234,12 @@ while sum(user_cards) <= 21:  # and
 # Hint 12: Once the user is done, it's time to let the computer play.
 # The computer should keep drawing cards as long as it has a score less than 17.
 
-# def compare():
-#     if sum(user_cards) == sum(computer_cards):
-#         return "draw"
-#
-#
-# compare()
-#
-# if compare() == 'draw':
-#     print("it is a draw")
+def compare(user, computer):
+    if sum(user_cards) == sum(computer_cards):
+        print("draw")
+
+
+compare(user_cards, computer_cards)
 
 # Hint 13: Create a function called compare() and pass in the user_score and computer_score.
 # If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0),
