@@ -83,11 +83,28 @@ def calculate_score(user, computer):
     # print(sum(computer_cards))
 
     # Place code here
+    if sum(user_cards) == 21:
+        print("You Win, your score is: ", sum(user_cards))
+        print("Computer score is: ", sum(computer_cards))
+        # return "You win, your score is ", sum(user_cards)
+        # print(0)
+        # return 0
+        exit()
+
+    elif sum(computer_cards) == 21:
+        print("Computer wins, score is: ", sum(computer_cards))
+        print("Your score is: ", sum(user_cards))
+        # print(computer_cards)
+        # print(0)
+        exit()
+
+
+    # code below are first
 
     if sum(user_cards) == 21:
         if user_cards[0] == 11 and user_cards[1] == 10:
-            if user_cards[0] == 10 and user_cards[1] == 11:
-                print("BlackJack You Win")
+            print("BlackJack You Win")
+        elif user_cards[0] == 10 and user_cards[1] == 11:
             print("BlackJack You Win")
 
         # return 0
@@ -96,9 +113,12 @@ def calculate_score(user, computer):
 
     elif sum(computer_cards) == 21:
         if computer_cards[0] == 11 and computer_cards[1] == 10:
-            if computer_cards[0] == 10 and computer_cards[1] == 11:
-                print("BlackJack Computer Wins")
             print("BlackJack Computer Wins")
+            print(computer_cards, sum(computer_cards))
+        elif computer_cards[0] == 10 and computer_cards[1] == 11:
+
+            print("BlackJack Computer Wins")
+            print(computer_cards, sum(computer_cards))
         # return 0
 
         exit()
@@ -107,21 +127,11 @@ def calculate_score(user, computer):
 
     # Thinking about this code if it is necessary or needed from the beginning role
     # Ok the code below is needed during the deal counting for cards till it reach 21
+#
+    # Moving code from here
 
-    if sum(user_cards) == 21:
-        print("You Win, your score is: ", sum(user_cards))
-        print("Computer score is: ", sum(computer_cards))
-        # return "You win, your score is ", sum(user_cards)
-        # print(0)
-        # return 0
-        # exit()
 
-    elif sum(computer_cards) == 21:
-        print("Computer wins, score is: ", sum(computer_cards))
-        print("You win, your score is: ", sum(user_cards))
-        print(computer_cards)
-        # print(0)
-        # exit()
+# Code move above
 
     if sum(user_cards) > 21:
         if user_cards[0] == 11 or user_cards[1] == 11:
@@ -135,6 +145,12 @@ def calculate_score(user, computer):
             computer_cards.remove(11)
             computer_cards.append(1)
             print(sum(computer_cards))
+
+    # putting code move from top here
+
+
+
+    ##########################
 
     if sum(user_cards) > 21:
         print("You loose, your score is: ", sum(user_cards))
@@ -150,7 +166,12 @@ def calculate_score(user, computer):
         print("You win, your score is: ", sum(user_cards))
         exit()
 
+    # if sum(user_cards) == sum(computer_cards):
+    #     compare(user_cards, computer_cards)
+    #     compare()
+
     return user_cards, computer_cards
+
 
 # Look up the sum() function to help you do this.
 
@@ -175,16 +196,27 @@ while sum(user_cards) <= 21:  # and
         print(user_cards)
         calculate_score(user_cards, computer_cards)
 
-    elif deal == 'n': # or sum(computer_cards) < 21:
+    elif deal == 'n':  # or sum(computer_cards) < 21:
+        if sum(user_cards) == sum(computer_cards):
+            print("draw")
+            print(sum(user_cards))
+            print(sum(computer_cards))
+            exit()
+            # calculate_score(user_cards, computer_cards)
+
+# Check this code later
+
         if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
             print("Computer Win, Computer Score is: ", sum(computer_cards))
             print(computer_cards)
             print("your Score is: ", sum(user_cards))
             break
-            # exit()
+            exit()
         # computer_cards.append(deal_card())
         # print(computer_cards)
         # calculate_score(user_cards, computer_cards)
+
+        # need to re-visit this code and understand what is doing much better
 
         if sum(computer_cards) > 21 and sum(user_cards) < 21:
             print("You win, your Score is: ", sum(user_cards))
@@ -212,17 +244,12 @@ while sum(user_cards) <= 21:  # and
             print("Computer Win, Computer score is: ", sum(computer_cards))
             print("You score is: ", sum(user_cards))
             break
-            # exit()
 
-        # elif sum(computer_cards) == sum(user_cards) and sum(computer_cards) < 21:
-        #     print(computer_cards)
-        #     print("Draw")
-        #     break
-        #     # exit()
 
     elif deal != 'y' or deal != 'n':
 
         break
+
 
 # Hint 10: If the game has not ended, ask the user if they want to draw another card.
 # If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
