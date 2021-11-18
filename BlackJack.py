@@ -98,7 +98,6 @@ def calculate_score(user, computer):
         # print(0)
         exit()
 
-
     # code below are first
 
     if sum(user_cards) == 21:
@@ -127,11 +126,10 @@ def calculate_score(user, computer):
 
     # Thinking about this code if it is necessary or needed from the beginning role
     # Ok the code below is needed during the deal counting for cards till it reach 21
-#
+    #
     # Moving code from here
 
-
-# Code move above
+    # Code move above
 
     if sum(user_cards) > 21:
         if user_cards[0] == 11 or user_cards[1] == 11:
@@ -147,8 +145,6 @@ def calculate_score(user, computer):
             print(sum(computer_cards))
 
     # putting code move from top here
-
-
 
     ##########################
 
@@ -172,6 +168,14 @@ def calculate_score(user, computer):
 
     return user_cards, computer_cards
 
+
+def compare(user, computer):
+    if sum(user_cards) == sum(computer_cards):
+        print("draw")
+        print(computer_cards)
+
+
+compare(user_cards, computer_cards)
 
 # Look up the sum() function to help you do this.
 
@@ -199,19 +203,20 @@ while sum(user_cards) <= 21:  # and
     elif deal == 'n':  # or sum(computer_cards) < 21:
         if sum(user_cards) == sum(computer_cards):
             print("draw")
+            print(computer_cards)
             print(sum(user_cards))
             print(sum(computer_cards))
             exit()
             # calculate_score(user_cards, computer_cards)
 
-# Check this code later
+        # Check this code later
 
         if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
             print("Computer Win, Computer Score is: ", sum(computer_cards))
             print(computer_cards)
             print("your Score is: ", sum(user_cards))
             break
-            exit()
+
         # computer_cards.append(deal_card())
         # print(computer_cards)
         # calculate_score(user_cards, computer_cards)
@@ -250,7 +255,6 @@ while sum(user_cards) <= 21:  # and
 
         break
 
-
 # Hint 10: If the game has not ended, ask the user if they want to draw another card.
 # If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
 
@@ -261,12 +265,6 @@ while sum(user_cards) <= 21:  # and
 # Hint 12: Once the user is done, it's time to let the computer play.
 # The computer should keep drawing cards as long as it has a score less than 17.
 
-def compare(user, computer):
-    if sum(user_cards) == sum(computer_cards):
-        print("draw")
-
-
-compare(user_cards, computer_cards)
 
 # Hint 13: Create a function called compare() and pass in the user_score and computer_score.
 # If the computer and user both have the same score, then it's a draw. If the computer has a blackjack (0),
