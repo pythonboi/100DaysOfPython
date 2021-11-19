@@ -80,6 +80,7 @@ def compare(user, computer):
     if sum(user_cards) == sum(computer_cards):
         print("draw")
         print(computer_cards)
+
         exit()
 
 
@@ -100,10 +101,6 @@ def calculate_score(user, computer):
     # code below are first
     # Checking for blackjack
 
-    if sum(user_cards) == sum(computer_cards):
-        compare(user, computer)
-        # (user_cards, computer_cards)
-
     if sum(user_cards) == 21:
         if user_cards[0] == 11 and user_cards[1] == 10:
             print("BlackJack You Win")
@@ -111,7 +108,7 @@ def calculate_score(user, computer):
             print("BlackJack You Win")
 
         # return 0
-        return True
+        # return True
 
     elif sum(computer_cards) == 21:
         if computer_cards[0] == 11 and computer_cards[1] == 10:
@@ -122,7 +119,7 @@ def calculate_score(user, computer):
             print("BlackJack Computer Wins")
             print(computer_cards)
         # return 0
-        return True
+        # return True
 
     elif sum(user_cards) == 21:
         print("You Win, your score is: ", sum(user_cards))
@@ -176,9 +173,9 @@ def calculate_score(user, computer):
         print("You win, your score is: ", sum(user_cards))
         exit()
 
-    # if sum(user_cards) == sum(computer_cards):
-    #     compare(user_cards, computer_cards)
-    #     compare()
+    if sum(user_cards) == sum(computer_cards):
+        compare(user, computer)
+        # (user_cards, computer_cards)
 
     return user_cards, computer_cards
 
@@ -210,59 +207,61 @@ while sum(user_cards) <= 21:  # and
         calculate_score(user_cards, computer_cards)
 
     elif deal == 'n':  # or sum(computer_cards) < 21:
-        if sum(user_cards) == sum(computer_cards):
-            compare(user_cards, computer_cards)
+        while sum(computer_cards) <= 21:
 
-        # calculate_score(user_cards, computer_cards)
-        # print("draw")
-        # print(computer_cards)
-        # print(sum(user_cards))
-        # print(sum(computer_cards))
-        # exit()
-        # calculate_score(user_cards, computer_cards)
+            if sum(user_cards) == sum(computer_cards):
+                compare(user_cards, computer_cards)
 
-        # Check this code later
-        # make this elif
-
-        if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
-            print("Computer Win, Computer Score is: ", sum(computer_cards))
-            print(computer_cards)
-            print("your Score is: ", sum(user_cards))
-            break
-
-        # computer_cards.append(deal_card())
-        # print(computer_cards)
-        # calculate_score(user_cards, computer_cards)
-
-        # need to re-visit this code and understand what is doing much better
-        # make this elif from if
-
-        elif sum(computer_cards) > 21 and sum(user_cards) <= 21:
-            print("You win, your Score is: ", sum(user_cards))
-            print("Computer score is:", sum(computer_cards))
-            break
+            # calculate_score(user_cards, computer_cards)
+            # print("draw")
+            # print(computer_cards)
+            # print(sum(user_cards))
+            # print(sum(computer_cards))
             # exit()
-            # computer_cards.append(deal_card())
             # calculate_score(user_cards, computer_cards)
 
-        # elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
-        #     print("Computer wins", sum(computer_cards))
-        #     exit()
-        elif sum(computer_cards) < sum(user_cards) and sum(computer_cards) < 21:
-            computer_cards.append(deal_card())
-            print(computer_cards)
-            calculate_score(user_cards, computer_cards)
+            # Check this code later
+            # make this elif
 
-        elif sum(user_cards) > sum(computer_cards):
-            print("You win, your score is:", sum(user_cards))
-            print("Computer score is:", sum(computer_cards))
-            break
-            # exit()
+            if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
+                print("Computer Win, Computer Score is: ", sum(computer_cards))
+                print(computer_cards)
+                print("your Score is: ", sum(user_cards))
+                break
 
-        elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) == 21:
-            print("Computer Win, Computer score is: ", sum(computer_cards))
-            print("You score is: ", sum(user_cards))
-            break
+            # computer_cards.append(deal_card())
+            # print(computer_cards)
+            # calculate_score(user_cards, computer_cards)
+
+            # need to re-visit this code and understand what is doing much better
+            # make this elif from if
+
+            elif sum(computer_cards) > 21 and sum(user_cards) <= 21:
+                print("You win, your Score is: ", sum(user_cards))
+                print("Computer score is:", sum(computer_cards))
+                break
+                # exit()
+                # computer_cards.append(deal_card())
+                # calculate_score(user_cards, computer_cards)
+
+            # elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
+            #     print("Computer wins", sum(computer_cards))
+            #     exit()
+            elif sum(computer_cards) < sum(user_cards) and sum(computer_cards) < 21:
+                computer_cards.append(deal_card())
+                print(computer_cards)
+                calculate_score(user_cards, computer_cards)
+
+            elif sum(user_cards) > sum(computer_cards):
+                print("You win, your score is:", sum(user_cards))
+                print("Computer score is:", sum(computer_cards))
+                break
+                # exit()
+
+            elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) == 21:
+                print("Computer Win, Computer score is: ", sum(computer_cards))
+                print("You score is: ", sum(user_cards))
+                break
 
     elif deal != 'y' or deal != 'n':
 
