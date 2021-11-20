@@ -79,6 +79,7 @@ for num in range(len(computer_cards)):
 def compare(user, computer):
     if sum(user_cards) == sum(computer_cards):
         print("draw")
+        print(sum(user_cards), "and", sum(computer_cards))
         print(computer_cards)
 
         exit()
@@ -113,7 +114,7 @@ def calculate_score(user, computer):
     elif sum(computer_cards) == 21:
         if computer_cards[0] == 11 and computer_cards[1] == 10:
             print("BlackJack Computer Wins")
-            print(computer_cards, sum(computer_cards))
+            print(computer_cards)
         elif computer_cards[0] == 10 and computer_cards[1] == 11:
 
             print("BlackJack Computer Wins")
@@ -223,11 +224,12 @@ while sum(user_cards) <= 21:  # and
             # Check this code later
             # make this elif
 
-            if sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
+            elif sum(computer_cards) > sum(user_cards) and sum(computer_cards) <= 21:
                 print("Computer Win, Computer Score is: ", sum(computer_cards))
                 print(computer_cards)
                 print("your Score is: ", sum(user_cards))
-                break
+                exit()
+                # break
 
             # computer_cards.append(deal_card())
             # print(computer_cards)
@@ -263,9 +265,13 @@ while sum(user_cards) <= 21:  # and
                 print("You score is: ", sum(user_cards))
                 break
 
+
+
     elif deal != 'y' or deal != 'n':
 
         break
+
+
 
 
 # Hint 10: If the game has not ended, ask the user if they want to draw another card.
