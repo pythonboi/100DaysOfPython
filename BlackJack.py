@@ -265,13 +265,18 @@ while sum(user_cards) <= 21:  # and
                 print("You score is: ", sum(user_cards))
                 break
 
-
-
     elif deal != 'y' or deal != 'n':
 
         break
 
+play = input("Do you want to continue playing?: ").lower()
 
+if play == 'y':
+    deal_card()
+
+elif play == 'n':
+    print("Good Bye!!!")
+    quit()
 
 
 # Hint 10: If the game has not ended, ask the user if they want to draw another card.
