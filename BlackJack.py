@@ -172,7 +172,7 @@ def calculate_score(user, computer):
         # print(computer_cards)
         print("Computer loose, computer score is: ", sum(computer_cards))
         print("You win, your score is: ", sum(user_cards))
-        exit()
+        # exit()
 
     if sum(user_cards) == sum(computer_cards):
         compare(user, computer)
@@ -228,8 +228,8 @@ while sum(user_cards) <= 21:  # and
                 print("Computer Win, Computer Score is: ", sum(computer_cards))
                 print(computer_cards)
                 print("your Score is: ", sum(user_cards))
-                exit()
-                # break
+                # exit()
+                break
 
             # computer_cards.append(deal_card())
             # print(computer_cards)
@@ -265,18 +265,19 @@ while sum(user_cards) <= 21:  # and
                 print("You score is: ", sum(user_cards))
                 break
 
+    play = input("Do you want to continue playing?: ").lower()
+
+    if play == 'y':
+        calculate_score(user_cards, computer_cards)
+
+    elif play == 'n':
+        print("Good Bye!!!")
+        quit()
+
     elif deal != 'y' or deal != 'n':
 
         break
 
-play = input("Do you want to continue playing?: ").lower()
-
-if play == 'y':
-    deal_card()
-
-elif play == 'n':
-    print("Good Bye!!!")
-    quit()
 
 
 # Hint 10: If the game has not ended, ask the user if they want to draw another card.
