@@ -265,15 +265,6 @@ while sum(user_cards) <= 21:  # and
                 print("You score is: ", sum(user_cards))
                 break
 
-    play = input("Do you want to continue playing?: ").lower()
-
-    if play == 'y':
-        calculate_score(user_cards, computer_cards)
-
-    elif play == 'n':
-        print("Good Bye!!!")
-        quit()
-
     elif deal != 'y' or deal != 'n':
 
         break
