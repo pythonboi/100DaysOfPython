@@ -73,18 +73,18 @@
 #
 # }
 
-travel_log = [
-    {
-        "country": "France",
-        "visits": 12,
-        "cities": ["Paris", "Lille", "Dijon"]
-    },
-    {
-        "country": "Germany",
-        "visits": 5,
-        "cities": ["Berlin", "Hamburg", "Stuttgart"]
-    },
-]
+# travel_log = [
+#     {
+#         "country": "France",
+#         "visits": 12,
+#         "cities": ["Paris", "Lille", "Dijon"]
+#     },
+#     {
+#         "country": "Germany",
+#         "visits": 5,
+#         "cities": ["Berlin", "Hamburg", "Stuttgart"]
+#     },
+# ]
 
 
 # 🚨 Do NOT change the code above
@@ -92,19 +92,94 @@ travel_log = [
 # TODO: Write the function that will allow new countries
 # to be added to the travel_log. 👇
 
-def add_new_country(country, visits, cities):
-    for check in travel_log:
-        check[country] = country
-    for travel in travel_log:
-        travel["country"] = country
-        travel["visits"] = visits
-        travel["cities"] = cities
+# def add_new_country(country, visits, cities):
+#     newDict = {}
+#
+#     newDict['country'] = country
+#     newDict['visits'] = visits
+#     newDict['cities'] = cities
+#
+#     # print(newDict)
+#     travel_log.append(newDict)
 
-    # theCountry = input("what country you visited: ").lower()
-    # theVisits = int(input("how many visits: "))
-    # theCities = input("Enter the cities you've visited: ").title()
+# newDict['country'] = country
+# check['country'] = country
+# check['visits'] = visits
+# check['cities'] = cities
 
 
 # 🚨 Do not change the code below
-add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
-print(travel_log)
+# add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+# print(travel_log)
+
+
+# print(travel_log[0])
+
+# theCountry = input("what country you visited: ").lower()
+# theVisits = int(input("how many visits: "))
+# theCities = input("Enter the cities you've visited: ").title()
+# starting_dictionary = {
+#     "a": 9,
+#     "b": 8,
+# }
+#
+# final_dictionary = {
+#     "a": 9,
+#     "b": 8,
+#     "c": 7,
+# }
+#
+# print(starting_dictionary)
+# print(final_dictionary)
+#
+# final_dictionary = starting_dictionary["c"] = 7
+#
+# #final_dictionary = starting_dictionary
+#
+# print(final_dictionary)
+#
+# dict = {
+#     "a": 1,
+#     "b": 2,
+#     "c": 3,
+# }
+#
+# dict[1] = 4
+
+def format_name(f_name, l_name):
+
+    f_name = input("what is your first name:? ").title()
+    l_name = input("what is your last name:? ").title()
+
+    print(f_name.title())
+    print(l_name.title())
+
+
+format_name(f_name="tommy", l_name="vicky")
+
+# what is your first name:? Jane
+# what is your last name:? Tom
+
+# A) Jane
+# B) Tom
+# C) Tommy
+# D) Vicky
+
+# What is your answer to the running code below?:
+
+# def outside_function(x, y):
+#     def inside_function(m, n):
+#         return m + n
+#
+#     return inside_function(x, y)
+#
+#
+# answer = outside_function(10, 20)
+# print(answer)
+
+# A) SyntaxError
+# B) 10
+# C) 20
+# D) 30
+# E) (10, 20)
+# F) NameError
