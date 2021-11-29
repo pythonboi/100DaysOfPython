@@ -9,12 +9,35 @@ number = []
 
 for count in range(1, 101):
     number.append(count)
-    # print(count)
-    #numberChoice = random.choice(count)
-    #number.append(numberChoice)
 
-print(number)
+    numberChoice = random.choice(number)
+
+# print(number)
+print(numberChoice)
+
+# numberOfGuesses = 0
+
+easy = 10
+hard = 5
+
 
 if level == 'easy':
-    print("You have 10 attempts remaining to guess the number.")
-    print("Make a guess: ")
+
+    print(f"You have {easy} attempts remaining to guess the number.")
+    numberOfGuesses = 10
+    while numberOfGuesses != 0:
+        userGuess = int(input("Make a guess: "))
+        if userGuess == numberChoice:
+            print(f"You won. you guessed the number right :) {numberChoice}")
+            break
+        elif userGuess > numberChoice:
+            print("Too high.\n"
+                  "Guess again.")
+            numberOfGuesses = numberOfGuesses - 1
+            print(f"You have {numberOfGuesses} attempts remaining to guess the number.")
+        elif userGuess < numberChoice:
+            print("Too low.\n"
+                  "Guess again.")
+            numberOfGuesses = numberOfGuesses - 1
+            print(f"You have {numberOfGuesses} attempts remaining to guess the number.")
+
