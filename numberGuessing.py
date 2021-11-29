@@ -41,3 +41,21 @@ if level == 'easy':
             numberOfGuesses = numberOfGuesses - 1
             print(f"You have {numberOfGuesses} attempts remaining to guess the number.")
 
+elif level == 'hard':
+    print(f"You have {hard} attempts remaining to guess the number.")
+    numberOfGuesses = hard
+    while numberOfGuesses != 0:
+        guess = int(input("Make a guess: "))
+        if guess == numberChoice:
+            print(f"You Won, you guessed the right number: {numberChoice}")
+            break
+        elif guess > numberChoice:
+            print("Too high.\n"
+                  "Guess again.")
+            numberOfGuesses = numberOfGuesses - 1
+            print(f"You have {numberOfGuesses} attempts remaining to guess the number.")
+        elif guess < numberChoice:
+            print("Too low.\n"
+                  "Guess again.")
+            numberOfGuesses = numberOfGuesses - 1
+            print(f"You have {numberOfGuesses} attempts remaining to guess the number.")
