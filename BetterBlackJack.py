@@ -51,16 +51,17 @@ deal_card()
 
 user_cards = []
 computer_cards = []
+game_on = False
 
 user_cards.append(deal_card())
 if len(user_cards) < 2:
     user_cards.append(deal_card())
-    print(user_cards)
+    #print(user_cards)
 
 computer_cards.append(deal_card())
 if len(computer_cards) < 2:
     computer_cards.append(deal_card())
-    print(computer_cards)
+    # print(f"computer first card: {computer_cards[0]}")
 
 
 # Hint 6: Create a function called calculate_score() that takes a List of cards as input
@@ -91,20 +92,22 @@ def calculate_score(user_score, computer_score):
             computer_cards.remove(11)
             computer_cards.append(1)
 
-    return user_score, computer_score
+    # if user_cards == 0 or computer_cards == 0:
+    # return user_cards, computer_cards
+
+    return sum(user_score), sum(computer_score)
 
 
-user, computer = calculate_score(sum(user_cards), sum(computer_cards))
+print(f"Your cards {user_cards}, Total card: {sum(user_cards)}")
+print(f"computer first card: {computer_cards[0]}")
 
-#computer = user[1]
-# computer = calculate_score(computer_cards)
+calculate_score(user_cards, computer_cards)
+user, computer = calculate_score(user_cards, computer_cards)
 
-
-print(type(user))
+# print(type(user))
 print(user)
 print(computer)
-print(type(computer))
-
+# print(type(computer))
 
 # Hint 7: Inside calculate_score() check for a blackjack (a hand with only 2 cards: ace + 10) and return 0 instead of the actual score. 0 will represent a blackjack in our game.
 
@@ -112,12 +115,19 @@ print(type(computer))
 
 # Hint 9: Call calculate_score(). If the computer or the user has a blackjack (0) or if the user's score is over 21, then the game ends.
 
-if sum(user_cards) == 0:
-    print("User win")
-elif sum(computer_cards) == 0:
-    print("Computer win")
+if user == 0 or computer == 0 or user > 21:
+    game_on = True
 
-# Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List. If no, then the game has ended.
+# Hint 10: If the game has not ended, ask the user if they want to draw another card. If yes, then use the deal_card() function to add another card to the user_cards List.
+# If no, then the game has ended.
+
+if not game_on:
+    question = (input("Do you want to draw another card:? ")).lower()
+    if question == 'y':
+        user_cards.append(deal_card())
+        calculate_score(user, computer)
+    else:
+        game_on = True
 
 # Hint 11: The score will need to be rechecked with every new card drawn and the checks in Hint 9 need to be repeated until the game ends.
 
