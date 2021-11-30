@@ -1,6 +1,10 @@
 from art import logoGuess
 import random
 
+logo = logoGuess
+
+print(logo)
+
 level = input("Welcome to the Number Guessing Game!\n"
               "I'm thinking of a number between 1 and 100.\n"
               "Choose a difficulty. Type 'easy' or 'hard': ").lower()
@@ -13,13 +17,12 @@ for count in range(1, 101):
     numberChoice = random.choice(number)
 
 # print(number)
-print(numberChoice)
+# print(numberChoice)
 
 # numberOfGuesses = 0
 
 easy = 10
 hard = 5
-
 
 if level == 'easy':
 
@@ -59,3 +62,7 @@ elif level == 'hard':
                   "Guess again.")
             numberOfGuesses = numberOfGuesses - 1
             print(f"You have {numberOfGuesses} attempts remaining to guess the number.")
+
+# print("You are out of attempts!\n"
+#       f"The Guess number is {numberChoice}\n"
+#       "Game Over")
