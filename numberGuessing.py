@@ -41,5 +41,10 @@ def check():
                     numberOfGuesses = numberOfGuesses - 1
                     print(f"You have {numberOfGuesses} attempts remaining to guess the number.")
 
+            if numberOfGuesses == 0:
+                print("You have exceeded the number of guesses, there are no more guesses left\n"
+                      f"The guess number is {numberChoice}\n"
+                      "Game Over!!! ")
+
 
 check()
