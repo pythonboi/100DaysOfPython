@@ -9,33 +9,85 @@ pick = (len(data))
 selectA = random.randint(0, pick)
 selectB = random.randint(0, pick)
 
+
+if selectA == selectB:
+    selectA = random.randint(0, pick)
+    # selectB = random.randint(0, pick)
+
+
 selected = [selectA]
 
-print(selected)
-
+# print(selected)
+#
 # print(selectA)
 # print(selectB)
 
 counter = 0
 
-print(
-    f"Compare A: {data[selectA].get('name')}, a {data[selectA].get('description')}, from {data[selectA].get('country')}.")
+option1 = 'Compare A:'
+option2 = 'Against B:'
 
-print(vs)
 
-print(
-    f"Against B: {data[selectB].get('name')}, a {data[selectB].get('description')}, from {data[selectB].get('country')}.")
-choose = input(f"Who has more followers? Type 'A' or 'B': ").lower()
+def switch():
+    if choose != '':
+        pass
 
-while selectA not in selected:
 
-    if data[selectA].get('follower_count') > data[selectB].get('follower_count'):
-        counter = counter + 1
-        print(f"You're right! Current score: {counter}.")
+while True:
 
-    elif data[selectB].get('follower_count') > data[selectA].get('follower_count'):
-        counter = counter + 1
-        print(f"You're right! Current score: {counter}")
+    print(
+        f"Compare A: {data[selectA].get('name')}, a {data[selectA].get('description')}, from {data[selectA].get('country')}.")
+
+    print(vs)
+
+    # against = f"Against B:", data[selectB].get('name'), "a", data[selectB].get('description'), "from", data[selectB].get('country'),"."
+    #
+
+    print(
+        f"Against B: {data[selectB].get('name')}, a {data[selectB].get('description')}, from {data[selectB].get('country')}.")
+
+    # print(f"{data[selectA].get('follower_count')}")
+    # print(f"{data[selectB].get('follower_count')}")
+
+    choose = input(f"Who has more followers? Type 'A' or 'B': ").lower()
+
+    a = data[selectA].get('follower_count')
+    b = data[selectB].get('follower_count')
+
+    print(a)
+    print(b)
+
+    # print(choose)
+
+
+# while True:
+    if choose == 'a':
+        if a > b:
+            counter = counter + 1
+            print(f"You're right! Current score: {counter}.")
+
+    elif choose == 'b':
+        if b > a:
+            counter = counter + 1
+            print(f"You're right! Current score: {counter}.")
+
+    if choose == 'a':
+        if a < b:
+            print(f"Sorry, that's wrong. Final score: {counter}")
+            break
+
+    elif choose == 'b':
+        if b < a:
+            print(f"Sorry, that's wrong. Final score: {counter}")
+            break
+
+    # if optionA > optionB:
+    #     counter = counter + 1
+    #     print(f"You're right! Current score: {counter}.")
+
+    # elif optionB > optionA:
+    #     counter = counter + 1
+    #     print(f"You're right! Current score: {counter}")
 
     else:
         print(f"Sorry, that's wrong. Final score: {counter}")
