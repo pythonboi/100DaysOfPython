@@ -9,11 +9,9 @@ pick = (len(data))
 selectA = random.randint(0, pick)
 selectB = random.randint(0, pick)
 
-
 if selectA == selectB:
     selectA = random.randint(0, pick)
     # selectB = random.randint(0, pick)
-
 
 selected = [selectA]
 
@@ -25,15 +23,28 @@ selected = [selectA]
 counter = 0
 
 option1 = 'Compare A:'
+
+infoName = data[selectA].get('name')  #
+infoDescr = data[selectA].get('description')
+infoCountry = data[selectA].get('country')
+
+aLetter = 'a'
+frm = 'from'
+
+# print(option1, infoName, infoDescr, infoCountry)
+
 option2 = 'Against B:'
 
+infoNameB = data[selectB].get('name')  #
+infoDescrB = data[selectB].get('description')
+infoCountryB = data[selectB].get('country')
 
-def switch():
-    if choose != '':
-        pass
 
+getB = f"{option2} {infoNameB}, {aLetter} {infoDescrB}, {frm} {infoCountryB}."
 
 while True:
+
+    print(f"{option1} {infoName}, {aLetter} {infoDescr}, {frm} {infoCountry}.")
 
     print(
         f"Compare A: {data[selectA].get('name')}, a {data[selectA].get('description')}, from {data[selectA].get('country')}.")
@@ -46,6 +57,10 @@ while True:
     print(
         f"Against B: {data[selectB].get('name')}, a {data[selectB].get('description')}, from {data[selectB].get('country')}.")
 
+    print(f"{option2} {infoNameB}, {aLetter} {infoDescrB}, {frm} {infoCountryB}.")
+
+    print(getB)
+
     # print(f"{data[selectA].get('follower_count')}")
     # print(f"{data[selectB].get('follower_count')}")
 
@@ -57,10 +72,19 @@ while True:
     print(a)
     print(b)
 
+
+    def switch():
+        if choose != '':
+
+            print(option2)
+            # pass
+
+
+    switch()
+
     # print(choose)
 
-
-# while True:
+    # while True:
     if choose == 'a':
         if a > b:
             counter = counter + 1
