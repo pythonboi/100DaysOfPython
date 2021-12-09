@@ -4,7 +4,8 @@ from game_data import data
 
 print(logoHighLowe)
 
-pick = (len(data))
+pick = (len(data) - 1)
+# print(pick)
 
 selectA = random.randint(0, pick)
 selectB = random.randint(0, pick)
@@ -59,19 +60,11 @@ print(b)
 while True:
 
     b = data[selectB].get('follower_count')
-    # a = b
-    # print(a)
 
     choose = input(f"Who has more followers? Type 'A' or 'B': ").lower()
 
-    # b = c
 
-    # print(a)
-    # print(b)
 
-    # print(choose)
-
-    # while True:
     if choose == 'a':
         if a > b:
             counter = counter + 1
@@ -110,7 +103,6 @@ while True:
         # counter != 0:
         print(f"{option1} {getB}")
 
-
     print(vs)
 
     selectC = random.randint(0, pick)
@@ -124,21 +116,6 @@ while True:
     print(b)
 
     print(f"{option2} {infoNameC}, {aLetter} {infoDescrC}, {frm} {infoCountryC}.")
-
-    # pointer = 0
-
-    # print(selectA)
-    # print(selectB)
-
-# def switch():
-#     if counter != 0:
-#         # if choose != '':
-#
-#         print(option2)
-#         # pass
-#
-#
-# switch()
 
 
 # print(
