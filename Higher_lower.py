@@ -59,10 +59,16 @@ print(b)
 
 while True:
 
-    b = data[selectB].get('follower_count')
+    # a = data[selectA].get('follower_count')
+    # b = data[selectB].get('follower_count')
 
     choose = input(f"Who has more followers? Type 'A' or 'B': ").lower()
 
+    def getSocialName():
+        a = data[selectA].get('follower_count')
+        b = data[selectB].get('follower_count')
+        if counter > 1:
+            newA = b
 
 
     if choose == 'a':
@@ -100,8 +106,11 @@ while True:
         break
 
     if True:
+
         # counter != 0:
-        print(f"{option1} {getB}")
+        switch = f"{option1} {getB}"
+        print(switch)
+        getSocialName()
 
     print(vs)
 
@@ -118,13 +127,3 @@ while True:
     print(f"{option2} {infoNameC}, {aLetter} {infoDescrC}, {frm} {infoCountryC}.")
 
 
-# print(
-#     f"Compare A: {data[selectA].get('name')}, a {data[selectA].get('description')}, from {data[selectA].get('country')}.")
-
-# against = f"Against B:", data[selectB].get('name'), "a", data[selectB].get('description'), "from", data[selectB].get('country'),"."
-#
-
-# print(
-#     f"Against B: {data[selectB].get('name')}, a {data[selectB].get('description')}, from {data[selectB].get('country')}.")
-
-# print(getB)
