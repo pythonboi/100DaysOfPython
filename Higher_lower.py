@@ -51,17 +51,29 @@ print(vs)
 
 print(f"{option2} {infoNameB}, {aLetter} {infoDescrB}, {frm} {infoCountryB}.")
 
-a = data[selectA].get('follower_count')
-b = data[selectB].get('follower_count')
+# a = data[selectA].get('follower_count')
+# b = data[selectB].get('follower_count')
 
-print(a)
-print(b)
+# print(a)
+# print(b)
 print("before the while loop")
 
 while True:
 
-    # a = data[selectA].get('follower_count')
-    # b = data[selectB].get('follower_count')
+    # if counter == 1 or counter > 1:
+    #     a
+
+    a = data[selectA].get('follower_count')
+    b = data[selectB].get('follower_count')
+
+    if counter != 0:
+        a = changeA
+        b = changeB
+        print(f"This is after counter is done: {a}")
+        print(f"This is after counter is done {b}")
+
+    print(a)
+    print(f"this is b:  {b}")
 
     choose = input(f"Who has more followers? Type 'A' or 'B': ").lower()
 
@@ -113,26 +125,33 @@ while True:
         print(f"Sorry, that's wrong. Final score: {counter}")
         break
 
+
     # evaluate()
 
     def getA():
+        print("I am read")
         needB = data[selectB].get('follower_count')
-        if counter > 1:
+        if counter == 1 or counter > 1:
             needA = needB
+            print("b change to A")
             print(needA)
+            global a
             a = needA
+            print(f"this is a after change it from b {a}")
+
+            print("Me read")
+            return a
+        print("I finish reading")
 
 
     if True:
         switch = f"{option1} {getB}"
         print(switch)
 
-        # thisB = b
-
         print(type(switch))
         # if counter > 2:
         #     switch = f"{option1} {getC()}"
-        getA()
+        changeA = getA()
 
     print(vs)
 
@@ -145,13 +164,16 @@ while True:
         infoDescrC = data[selectC].get('description')
         infoCountryC = data[selectC].get('country')
         c = data[selectC].get('follower_count')
+        print(c)
         # print(c)
+        global b
         b = c
-        print(b)
+        print(f"This is b after change if from c {b}")
 
         print(f"{option2} {infoNameC}, {aLetter} {infoDescrC}, {frm} {infoCountryC}.")
+        return b
 
 
-    getC()
+    changeB = getC()
     print(a)
     print(b)
