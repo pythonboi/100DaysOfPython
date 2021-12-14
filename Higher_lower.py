@@ -16,10 +16,6 @@ if selectA == selectB:
 
 selected = [selectA]
 
-# print(selected)
-#
-# print(selectA)
-# print(selectB)
 
 counter = 0
 
@@ -54,42 +50,33 @@ print(f"{option2} {infoNameB}, {aLetter} {infoDescrB}, {frm} {infoCountryB}.")
 # a = data[selectA].get('follower_count')
 # b = data[selectB].get('follower_count')
 
-print(a)
-print(b)
+# print(a)
+# print(b)
 print("before the while loop")
 
 while True:
 
-    # if counter == 1 or counter > 1:
-    #     a
-
     a = data[selectA].get('follower_count')
     b = data[selectB].get('follower_count')
-
-    d = getB
 
     if counter != 0:
         a = changeA
         b = changeB
+
+    elif counter > 1:
+        d = changeB
+        a = d
+        print(f"Here is the elif state{a}")
+
         # print(f"This is after counter is done: {a}")
         # print(f"This is after counter is done {b}")
 
-    # print(a)
-    # print(f"this is b:  {b}")
+    print(a)
+    print(f"this is b:  {b}")
 
     choose = input(f"Who has more followers? Type 'A' or 'B': ").lower()
 
-    # def getSocialName():
-    #     a = data[selectA].get('follower_count')
-    #     b = data[selectB].get('follower_count')
-    #     if counter > 1:
-    #         newA = b
-
     # Code below checking and evaluating the code process
-
-    # print("inside the evaluate function")
-
-    # counter = 0
 
     if choose == 'a':
         if a > b:
@@ -119,6 +106,7 @@ while True:
         print(f"Sorry, that's wrong. Final score: {counter}")
         break
 
+
     # selectC = random.randint(0, pick)
     #
     # infoNameC = data[selectC].get('name')  #
@@ -127,7 +115,6 @@ while True:
     # c = data[selectC].get('follower_count')
     #
     # getC = f"{infoNameC}, {aLetter} {infoDescrC}, {frm} {infoCountryC}."
-
 
     def get_A():
         # print("I am read")
@@ -150,23 +137,28 @@ while True:
         # print(type(switch))
         if counter > 1:
             switch1 = f"{option1} {getC} "
-            # print("I get here")
+            print("I get here, I am reading ")
+            # global a
+            # d = changeB
+            # a = d
             print(switch1)
+            print(f"This is from line 149 {a}")
 
         else:
             switch = f"{option1} {getB}"
             print(switch)
         changeA = get_A()
 
+    #print(f"a is still {d}")
     print(vs)
+    print(f"a is still {a}")
 
     selectC = random.randint(0, pick)
 
     infoNameC = data[selectC].get('name')  #
     infoDescrC = data[selectC].get('description')
     infoCountryC = data[selectC].get('country')
-    c = data[selectC].get('follower_count')
-    print(c)
+    # move the c from here
 
     getC = f"{infoNameC}, {aLetter} {infoDescrC}, {frm} {infoCountryC}."
 
@@ -181,6 +173,10 @@ while True:
         # c = data[selectC].get('follower_count')
         #
         # getC = f"{infoNameC}, {aLetter} {infoDescrC}, {frm} {infoCountryC}."
+
+        c = data[selectC].get('follower_count')
+        print("This is from get_C function")
+        print(c)
 
         global b
         b = c
