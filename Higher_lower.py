@@ -16,7 +16,6 @@ if selectA == selectB:
 
 selected = [selectA]
 
-
 counter = 0
 
 option1 = 'Compare A:'
@@ -47,8 +46,8 @@ print(vs)
 
 print(f"{option2} {infoNameB}, {aLetter} {infoDescrB}, {frm} {infoCountryB}.")
 
-# a = data[selectA].get('follower_count')
-# b = data[selectB].get('follower_count')
+a = data[selectA].get('follower_count')
+b = data[selectB].get('follower_count')
 
 # print(a)
 # print(b)
@@ -56,17 +55,12 @@ print("before the while loop")
 
 while True:
 
-    a = data[selectA].get('follower_count')
-    b = data[selectB].get('follower_count')
+    # a = data[selectA].get('follower_count')
+    # b = data[selectB].get('follower_count')
 
     if counter != 0:
         a = changeA
         b = changeB
-
-    elif counter > 1:
-        d = changeB
-        a = d
-        print(f"Here is the elif state{a}")
 
         # print(f"This is after counter is done: {a}")
         # print(f"This is after counter is done {b}")
@@ -119,7 +113,7 @@ while True:
     def get_A():
         # print("I am read")
         needB = data[selectB].get('follower_count')
-        if counter == 1 or counter > 1:
+        if counter == 1:  # or counter > 1:
             needA = needB
             # print("b change to A")
             # print(needA)
@@ -129,27 +123,39 @@ while True:
 
             # print("Me read")
             return a
-        # print("I finish reading")
+        print("I finish reading")
+
+
+    def getSecondA():
+
+        global a
+        a = changeB
+
+        print("I get here, I am reading ")
+        print(f"This is from line 149 {a}")
+        return a
 
 
     if True:
 
-        # print(type(switch))
         if counter > 1:
             switch1 = f"{option1} {getC} "
-            print("I get here, I am reading ")
-            # global a
-            # d = changeB
-            # a = d
+            # cut = switch1.removeprefix(option1)
+            #
+            #
+            # print(cut)
             print(switch1)
-            print(f"This is from line 149 {a}")
+
+            changeA = getSecondA()
 
         else:
             switch = f"{option1} {getB}"
             print(switch)
-        changeA = get_A()
+            print("Here is the problem")
 
-    #print(f"a is still {d}")
+            changeA = get_A()
+
+    # print(f"a is still {d}")
     print(vs)
     print(f"a is still {a}")
 
