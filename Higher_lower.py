@@ -49,11 +49,13 @@ print(f"{option2} {infoNameB}, {aLetter} {infoDescrB}, {frm} {infoCountryB}.")
 a = data[selectA].get('follower_count')
 b = data[selectB].get('follower_count')
 
-# print(a)
-# print(b)
-print("before the while loop")
+# print("before the while loop")
 
 while True:
+
+    # This is to fix the code from not giving the same value
+    if a == b:
+        get_C()
 
     # a = data[selectA].get('follower_count')
     # b = data[selectB].get('follower_count')
@@ -62,11 +64,8 @@ while True:
         a = changeA
         b = changeB
 
-        # print(f"This is after counter is done: {a}")
-        # print(f"This is after counter is done {b}")
-
-    print(a)
-    print(f"this is b:  {b}")
+    # print(a)
+    # print(f"this is b:  {b}")
 
     choose = input(f"Who has more followers? Type 'A' or 'B': ").lower()
 
@@ -123,7 +122,7 @@ while True:
 
             # print("Me read")
             return a
-        print("I finish reading")
+        # print("I finish reading")
 
 
     def getSecondA():
@@ -131,8 +130,8 @@ while True:
         global a
         a = changeB
 
-        print("I get here, I am reading ")
-        print(f"This is from line 149 {a}")
+        # print("I get here, I am reading ")
+        # print(f"This is from line 149 {a}")
         return a
 
 
@@ -151,13 +150,13 @@ while True:
         else:
             switch = f"{option1} {getB}"
             print(switch)
-            print("Here is the problem")
+            # print("Here is the problem")
 
             changeA = get_A()
 
     # print(f"a is still {d}")
     print(vs)
-    print(f"a is still {a}")
+    # print(f"a is still {a}")
 
     selectC = random.randint(0, pick)
 
@@ -181,12 +180,12 @@ while True:
         # getC = f"{infoNameC}, {aLetter} {infoDescrC}, {frm} {infoCountryC}."
 
         c = data[selectC].get('follower_count')
-        print("This is from get_C function")
-        print(c)
+        # print("This is from get_C function")
+        # print(c)
 
         global b
         b = c
-        print(f"This is b after change if from c {b}")
+        # print(f"This is b after change if from c {b}")
 
         print(f"{option2} {getC}")
         return b
