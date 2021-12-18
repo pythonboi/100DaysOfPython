@@ -2,8 +2,21 @@
 
 from coffeeMenu import MENU, resources
 
-
 account = 0
+
+# variable for all the money accepting
+
+quarters = 0.25
+dimes = 0.10
+nickles = 0.05
+pennies = 0.01
+
+# Price of drink
+
+espresso = float(1.50)
+latte = float(2.50)
+cappuccino = float(3.00)
+
 
 # TODO create a question
 
@@ -17,12 +30,16 @@ elif question == 'off':
     print(f"Powering off the coffee machine... GoodBye!!!")
     exit()
 
+question = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
 
 menu = MENU
 
 
 def select(menu):
+    print("Please insert coins.")
+
+
     money = input("Please insert coins.")
     return menu
 
