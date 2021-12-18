@@ -1,6 +1,7 @@
 # TODO Import the menu
 
 from coffeeMenu import MENU, resources
+import pyinputplus as pyip
 
 account = 0
 
@@ -20,31 +21,42 @@ cappuccino = float(3.00)
 
 # TODO create a question
 
-question = input("What would you like? (espresso/latte/cappuccino): ").lower()
-
-if question == 'report':
-    print(f"Water: {resources['water']}ml\nMilk: {resources['milk']}ml\nCoffee: {resources['coffee']}g")
-    print(f"Money: ${account}")
-
-elif question == 'off':
-    print(f"Powering off the coffee machine... GoodBye!!!")
-    exit()
-
-question = input("What would you like? (espresso/latte/cappuccino): ").lower()
-
-
-menu = MENU
-
-
-def select(menu):
+def selection(drinkType):
     print("Please insert coins.")
 
+    if question == drinkType:
+        quartersCount = pyip.inputInt(prompt="how many quarters?: ")
+        dimesCount = pyip.inputInt("how many dimes?: ")
+        nicklesCount = pyip.inputInt("how many nickles?: ")
+        penniesCount = pyip.inputInt("how many pennies?: ")
 
-    money = input("Please insert coins.")
-    return menu
+        thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
+        print(thePrice)
+
+        if thePrice > espresso:
+
+            print(f"Here is {}")
 
 
-select(menu)
+while True:
+
+    question = input("What would you like? (espresso/latte/cappuccino): ").lower()
+
+    if question == 'report':
+        print(f"Water: {resources['water']}ml\nMilk: {resources['milk']}ml\nCoffee: {resources['coffee']}g")
+        print(f"Money: ${account}")
+
+    elif question == 'off':
+        print(f"Powering off the coffee machine... GoodBye!!!")
+        exit()
+
+    if question != 'report':
+        selection(drinkType=question)
+
+    # if question == 'espresso':
+    #     print("Please insert coins.")
+
+menu = MENU
 
 # TODO Report
 
