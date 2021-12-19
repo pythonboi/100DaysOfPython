@@ -24,6 +24,14 @@ cappuccino = float(3.00)
 def selection(drinkType):
     print("Please insert coins.")
 
+    for checkDrink in MENU:
+        if checkDrink == question:
+            info = MENU.get(checkDrink)
+            drinkCost = info['cost']
+            print(drinkCost)
+            # print(info)
+        #print(checkDrink)
+
     if question == drinkType:
         quartersCount = pyip.inputInt(prompt="how many quarters?: ")
         dimesCount = pyip.inputInt("how many dimes?: ")
@@ -32,10 +40,12 @@ def selection(drinkType):
 
         thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
         print(thePrice)
+        print(drinkType)
+        print(MENU['espresso'])
 
-        if thePrice > espresso:
-
-            print(f"Here is {}")
+        #if thePrice > espresso:
+            #accountBalance = thePrice -
+           # print(f"Here is {}")
 
 
 while True:
@@ -69,4 +79,4 @@ menu = MENU
 # Todo Make Coffee
 
 
-# print(MENU)
+
