@@ -18,24 +18,62 @@ espresso = float(1.50)
 latte = float(2.50)
 cappuccino = float(3.00)
 
-
 # TODO create a question
+
+# def getReport(theWater, theMilk, theCoffee):
+#     waterRemains = resources['water']
+#     milkRemains = resources['milk']
+#     coffeeRemains = resources['coffee']
+#     return waterRemains, milkRemains, coffeeRemains
+#
+#
+# # getReport(theWater=resources['water'], theMilk=resources['milk'], theCoffee=resources['coffee'])
+#
+# print(getReport(theWater=resources['water'], theMilk=resources['milk'], theCoffee=resources['coffee']))
+
+waterRemains = resources['water']
+milkRemains = resources['milk']
+coffeeRemains = resources['coffee']
+
 
 def selection(drinkType):
     print("Please insert coins.")
 
-    if question == drinkType:
-        quartersCount = pyip.inputInt(prompt="how many quarters?: ")
-        dimesCount = pyip.inputInt("how many dimes?: ")
-        nicklesCount = pyip.inputInt("how many nickles?: ")
-        penniesCount = pyip.inputInt("how many pennies?: ")
+    for checkDrink in MENU:
+        if checkDrink == question:
+            info = MENU.get(checkDrink)
+            # print(info['ingredients']['water'])
+            drinkCost = info['cost']
+            print(drinkCost)
 
-        thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
-        print(thePrice)
+            # if question == drinkType:
+            quartersCount = pyip.inputInt(prompt="how many quarters?: ")
+            dimesCount = pyip.inputInt("how many dimes?: ")
+            nicklesCount = pyip.inputInt("how many nickles?: ")
+            penniesCount = pyip.inputInt("how many pennies?: ")
 
-        if thePrice > espresso:
+            thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
+            print(thePrice)
 
-            print(f"Here is {}")
+            if thePrice > drinkCost:
+                drinkChange = thePrice - drinkCost
+                drinkDecimal = "{:.3}".format(drinkChange)
+
+                waterBalance = waterRemains - info['ingredients']['water']
+                milkBalance = milkRemains - info['ingredients']['milk']
+                coffeeBalance = coffeeRemains - info['ingredients']['coffee']
+
+                print(f"{waterBalance} {milkBalance} {coffeeBalance}")
+
+                print(f"Here is ${drinkDecimal} in change.")
+                print(f"Here is your {question} ☕. Enjoy!")
+            else:
+                print("Sorry that's not enough money. Money refunded. ")
+
+    # getReport(getReport(theWater=resources['water'], theMilk=resources['milk'], theCoffee=resources['coffee']))
+
+
+# print(f"{waterRemains} {milkRemains} {coffeeRemains}")
 
 
 while True:
@@ -53,11 +91,6 @@ while True:
     if question != 'report':
         selection(drinkType=question)
 
-    # if question == 'espresso':
-    #     print("Please insert coins.")
-
-menu = MENU
-
 # TODO Report
 
 # ToDO Check resources sufficient?
@@ -67,6 +100,3 @@ menu = MENU
 # Todo Check transaction successful?
 
 # Todo Make Coffee
-
-
-# print(MENU)
