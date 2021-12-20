@@ -18,6 +18,14 @@ espresso = float(1.50)
 latte = float(2.50)
 cappuccino = float(3.00)
 
+defaultWater = resources.get('water')
+defaultMilk = resources['milk']
+defaultCoffee = resources['coffee']
+
+measurement = 'ml'
+quantity = 'g'
+# print(f"{defaultWater}{measurement}")
+
 # TODO create a question
 
 # def getReport(theWater, theMilk, theCoffee):
@@ -55,6 +63,10 @@ def selection(drinkType):
             thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
             print(thePrice)
 
+            global account
+
+            account = drinkCost
+
             if thePrice > drinkCost:
                 drinkChange = thePrice - drinkCost
                 drinkDecimal = "{:.3}".format(drinkChange)
@@ -63,7 +75,16 @@ def selection(drinkType):
                 milkBalance = milkRemains - info['ingredients']['milk']
                 coffeeBalance = coffeeRemains - info['ingredients']['coffee']
 
-                print(f"{waterBalance} {milkBalance} {coffeeBalance}")
+                global defaultWater
+                global defaultMilk
+                global defaultCoffee
+
+                defaultWater = waterBalance
+                defaultMilk = milkBalance
+                defaultCoffee = coffeeBalance
+
+                # print(f"{waterBalance} {milkBalance} {coffeeBalance}")
+                print(defaultWater)
 
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
@@ -80,7 +101,13 @@ while True:
 
     question = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
-    if question == 'report':
+    if account != 0 and question == 'report':
+        print(f"Water: {defaultWater}{measurement}")
+        print(f"Milk: {defaultMilk}{measurement}")
+        print(f"Coffee: {defaultCoffee}{quantity}")
+        print(f"Money: {account}")
+
+    elif question == 'report':
         print(f"Water: {resources['water']}ml\nMilk: {resources['milk']}ml\nCoffee: {resources['coffee']}g")
         print(f"Money: ${account}")
 
