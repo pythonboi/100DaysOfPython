@@ -52,7 +52,7 @@ def selection(drinkType):
             info = MENU.get(checkDrink)
             # print(info['ingredients']['water'])
             drinkCost = info['cost']
-            print(drinkCost)
+            # print(drinkCost)
 
             # if question == drinkType:
             quartersCount = pyip.inputInt(prompt="how many quarters?: ")
@@ -61,13 +61,16 @@ def selection(drinkType):
             penniesCount = pyip.inputInt("how many pennies?: ")
 
             thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
-            print(thePrice)
+            # print(thePrice)
 
             global account
 
             account = drinkCost
 
-            if thePrice > drinkCost:
+            if resources['water'] > info['ingredients']['water']:
+
+            # if thePrice > drinkCost:
+
                 drinkChange = thePrice - drinkCost
                 drinkDecimal = "{:.3}".format(drinkChange)
 
@@ -84,10 +87,20 @@ def selection(drinkType):
                 defaultCoffee = coffeeBalance
 
                 # print(f"{waterBalance} {milkBalance} {coffeeBalance}")
-                print(defaultWater)
+                # print(defaultWater)
+
+                getMe = info['ingredients']['water']
+
+                print(getMe)
 
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
+                print(defaultWater)
+
+            elif defaultWater < info['ingredients']['water']:
+                print(defaultWater)
+                print("Sorry there is not enough water.")
+
             else:
                 print("Sorry that's not enough money. Money refunded. ")
 
@@ -101,10 +114,14 @@ while True:
 
     question = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
+    if question != 'report':
+        selection(drinkType=question)
+
     if account != 0 and question == 'report':
         print(f"Water: {defaultWater}{measurement}")
         print(f"Milk: {defaultMilk}{measurement}")
         print(f"Coffee: {defaultCoffee}{quantity}")
+
         print(f"Money: {account}")
 
     elif question == 'report':
@@ -115,8 +132,7 @@ while True:
         print(f"Powering off the coffee machine... GoodBye!!!")
         exit()
 
-    if question != 'report':
-        selection(drinkType=question)
+
 
 # TODO Report
 
