@@ -69,7 +69,7 @@ def selection(drinkType):
 
             if resources['water'] > info['ingredients']['water']:
 
-            # if thePrice > drinkCost:
+                # if thePrice > drinkCost:
 
                 drinkChange = thePrice - drinkCost
                 drinkDecimal = "{:.3}".format(drinkChange)
@@ -121,7 +121,7 @@ while True:
         print(f"Water: {defaultWater}{measurement}")
         print(f"Milk: {defaultMilk}{measurement}")
         print(f"Coffee: {defaultCoffee}{quantity}")
-
+        #account = account +
         print(f"Money: {account}")
 
     elif question == 'report':
@@ -131,8 +131,6 @@ while True:
     elif question == 'off':
         print(f"Powering off the coffee machine... GoodBye!!!")
         exit()
-
-
 
 # TODO Report
 
