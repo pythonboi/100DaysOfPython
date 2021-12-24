@@ -28,17 +28,6 @@ quantity = 'g'
 
 # TODO create a question
 
-# def getReport(theWater, theMilk, theCoffee):
-#     waterRemains = resources['water']
-#     milkRemains = resources['milk']
-#     coffeeRemains = resources['coffee']
-#     return waterRemains, milkRemains, coffeeRemains
-#
-#
-# # getReport(theWater=resources['water'], theMilk=resources['milk'], theCoffee=resources['coffee'])
-#
-# print(getReport(theWater=resources['water'], theMilk=resources['milk'], theCoffee=resources['coffee']))
-
 waterRemains = resources['water']
 milkRemains = resources['milk']
 coffeeRemains = resources['coffee']
@@ -50,7 +39,8 @@ def selection(drinkType):
     for checkDrink in MENU:
         if checkDrink == question:
             info = MENU.get(checkDrink)
-            # print(info['ingredients']['water'])
+            print(info)
+            print(info['ingredients']['water'])
             drinkCost = info['cost']
             # print(drinkCost)
 
@@ -61,13 +51,16 @@ def selection(drinkType):
             penniesCount = pyip.inputInt("how many pennies?: ")
 
             thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
-            # print(thePrice)
+            print(thePrice)
 
             global account
 
             account = drinkCost
 
-            if resources['water'] > info['ingredients']['water']:
+            if thePrice < drinkCost:
+                print("Sorry that's not enough money. Money refunded. ")
+
+            elif thePrice > drinkCost:
 
                 # if thePrice > drinkCost:
 
@@ -89,20 +82,31 @@ def selection(drinkType):
                 # print(f"{waterBalance} {milkBalance} {coffeeBalance}")
                 # print(defaultWater)
 
-                getMe = info['ingredients']['water']
-
-                print(getMe)
+                # getMe = info['ingredients']['water']
+                #
+                # print(getMe)
 
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
-                print(defaultWater)
+                # print(defaultWater)
 
-            elif defaultWater < info['ingredients']['water']:
-                print(defaultWater)
-                print("Sorry there is not enough water.")
+            # elif defaultWater < info['ingredients']['water']:
+            #     print(defaultWater)
+            #     print("Sorry there is not enough water.")
 
-            else:
-                print("Sorry that's not enough money. Money refunded. ")
+
+def checkWater():
+    for checkDrink in MENU:
+        if checkDrink == question:
+            info = MENU.get(checkDrink)
+            print(info)
+            print(info['ingredients']['water'])
+            drinkCost = info['cost']
+            # print(drinkCost)
+
+    if defaultWater < info['ingredients']['water']:
+        print(defaultWater)
+        print("Sorry there is not enough water.")
 
     # getReport(getReport(theWater=resources['water'], theMilk=resources['milk'], theCoffee=resources['coffee']))
 
@@ -114,6 +118,9 @@ while True:
 
     question = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
+    if account != 0 and account > 1:
+        checkWater()
+
     if question != 'report':
         selection(drinkType=question)
 
@@ -121,7 +128,7 @@ while True:
         print(f"Water: {defaultWater}{measurement}")
         print(f"Milk: {defaultMilk}{measurement}")
         print(f"Coffee: {defaultCoffee}{quantity}")
-        #account = account +
+        # account = account +
         print(f"Money: {account}")
 
     elif question == 'report':
@@ -141,3 +148,6 @@ while True:
 # Todo Check transaction successful?
 
 # Todo Make Coffee
+
+
+# elif account != 0 and question == 'espresso':
