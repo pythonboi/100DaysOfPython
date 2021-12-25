@@ -12,13 +12,6 @@ dimes = 0.10
 nickles = 0.05
 pennies = 0.01
 
-# Price of drink
-
-# espresso = float(1.50)
-# latte = float(2.50)
-# cappuccino = float(3.00)
-
-
 defaultWater = resources.get('water')
 defaultMilk = resources['milk']
 defaultCoffee = resources['coffee']
@@ -35,27 +28,8 @@ waterRemains = resources['water']
 milkRemains = resources['milk']
 coffeeRemains = resources['coffee']
 
-# def allFunction():
-#
-#     drinkChange = thePrice - drinkCost
-#     drinkDecimal = "{:.3}".format(drinkChange)
-#
-#     waterBalance = waterRemains - info['ingredients']['water']
-#     milkBalance = milkRemains - info['ingredients']['milk']
-#     coffeeBalance = coffeeRemains - info['ingredients']['coffee']
-#     global defaultWater
-#     global defaultMilk
-#     global defaultCoffee
-#
-#     defaultWater = waterBalance
-#     defaultMilk = milkBalance
-#     defaultCoffee = coffeeBalance
-
 
 def selection(drinkType):
-
-    # print("Please insert coins.")
-
     global account
 
     global defaultWater
@@ -92,12 +66,14 @@ def selection(drinkType):
 
             # global account
 
-            account = drinkCost
+            # account = drinkCost
 
             if thePrice < drinkCost:
                 print("Sorry that's not enough money. Money refunded. ")
 
-            elif thePrice > drinkCost:
+            elif thePrice > drinkCost and question != 'espresso':
+
+                account = drinkCost
 
                 # if thePrice > drinkCost:
 
@@ -105,10 +81,31 @@ def selection(drinkType):
                 drinkDecimal = "{:.3}".format(drinkChange)
 
                 waterBalance = waterRemains - info['ingredients']['water']
-                milkBalance = milkRemains - info['ingredients']['milk']
+                # milkBalance = milkRemains - info['ingredients']['milk']
+                milkBalance = milkRemains - info['ingredients'].get('milk')
+                print(milkBalance)
                 coffeeBalance = coffeeRemains - info['ingredients']['coffee']
 
-              # Pick it up from here. if code does not work return it back from the next line of
+                defaultWater = waterBalance
+                defaultMilk = milkBalance
+                defaultCoffee = coffeeBalance
+
+                print(f"Here is ${drinkDecimal} in change.")
+                print(f"Here is your {question} ☕. Enjoy!")
+
+            elif account != 0 and question == 'espresso':
+
+                account = drinkCost
+
+                print("I am here second")
+
+                drinkChange = thePrice - drinkCost
+                drinkDecimal = "{:.3}".format(drinkChange)
+
+                waterBalance = waterRemains - info['ingredients']['water']
+                coffeeBalance = coffeeRemains - info['ingredients']['coffee']
+
+                # Pick it up from here. if code does not work return it back from the next line of
 
                 # print(defaultWater, defaultMilk, defaultCoffee)
 
@@ -117,17 +114,40 @@ def selection(drinkType):
                 # global defaultCoffee
 
                 defaultWater = waterBalance
-                defaultMilk = milkBalance
+                # defaultMilk = milkBalance
                 defaultCoffee = coffeeBalance
 
-                print(defaultWater, defaultMilk, defaultCoffee)
+                # print(defaultWater, defaultMilk, defaultCoffee)
 
-                # print(f"{waterBalance} {milkBalance} {coffeeBalance}")
+                print(f"Here is ${drinkDecimal} in change.")
+                print(f"Here is your {question} ☕. Enjoy!")
                 # print(defaultWater)
 
-                # getMe = info['ingredients']['water']
-                #
-                # print(getMe)
+            elif account == 0 or question == 'espresso':
+
+                account = drinkCost
+
+                print('I am here')
+
+                drinkChange = thePrice - drinkCost
+                drinkDecimal = "{:.3}".format(drinkChange)
+
+                waterBalance = waterRemains - info['ingredients']['water']
+                coffeeBalance = coffeeRemains - info['ingredients']['coffee']
+
+                # Pick it up from here. if code does not work return it back from the next line of
+
+                # print(defaultWater, defaultMilk, defaultCoffee)
+
+                # global defaultWater
+                # global defaultMilk
+                # global defaultCoffee
+
+                defaultWater = waterBalance
+                # defaultMilk = milkBalance
+                defaultCoffee = coffeeBalance
+
+                # print(defaultWater, defaultMilk, defaultCoffee)
 
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
@@ -137,36 +157,19 @@ def selection(drinkType):
             #     print(defaultWater)
             #     print("Sorry there is not enough water.")
 
-#
-# def checkWater(notEnough):
-#     for checkDrink in MENU:
-#         if checkDrink == question:
-#             info = MENU.get(checkDrink)
-#             print(info)
-#             print(info['ingredients']['water'])
-#             drinkCost = info['cost']
-#             # print(drinkCost)
-#
-#     if defaultWater < info['ingredients']['water']:
-#         print(defaultWater)
-#         print("Sorry there is not enough water.")
 
-    # getReport(getReport(theWater=resources['water'], theMilk=resources['milk'], theCoffee=resources['coffee']))
-
-
-# print(f"{waterRemains} {milkRemains} {coffeeRemains}")
+def noMilk():
+    pass
 
 
 while True:
 
     question = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
-
-    # if account != 0 and account > 1:
-    #     checkWater(notEnough=defaultWater)
+    # if account == 0 or account != 0 and question == 'espresso':
+    #     noMilk()
 
     if question != 'report':
-        # print("Please insert coins.")
         selection(drinkType=question)
 
     if account != 0 and question == 'report':
