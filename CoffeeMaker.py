@@ -20,7 +20,6 @@ print(defaultWater, defaultMilk, defaultCoffee, account)
 
 measurement = 'ml'
 quantity = 'g'
-# print(f"{defaultWater}{measurement}")
 
 # TODO create a question
 
@@ -36,17 +35,11 @@ def selection(drinkType):
     global defaultMilk
     global defaultCoffee
 
-    # account = drinkCost
-
-    # print(defaultWater, defaultMilk, defaultCoffee)
-
     for checkDrink in MENU:
         if checkDrink == question:
             info = MENU.get(checkDrink)
-            print(info)
-            # print(info['ingredients']['water'])
+
             drinkCost = info['cost']
-            # print(drinkCost)
 
             if account != 0 and defaultWater < info['ingredients']['water']:
                 # print(defaultWater)
@@ -62,24 +55,12 @@ def selection(drinkType):
             thePrice = quartersCount * quarters + dimesCount * dimes + nicklesCount * nickles + penniesCount * pennies
             print(thePrice)
 
-            # Paste here
-
-            # global account
-
-            # account = drinkCost
-
             if thePrice < drinkCost:
                 print("Sorry that's not enough money. Money refunded. ")
 
             elif thePrice > drinkCost and question != 'espresso':
 
                 account = drinkCost
-
-                # Check here for money screw up
-                # print("I am reading this")
-                # account = account + drinkCost
-
-                # if thePrice > drinkCost:
 
                 drinkChange = thePrice - drinkCost
                 drinkDecimal = "{:.3}".format(drinkChange)
@@ -97,26 +78,7 @@ def selection(drinkType):
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
 
-            # elif account != 0 and question != 'espresso':
-            #
-            #     print("I am here with no espresso")
-            #
-            #     account = account + drinkCost
-            #
-            #     waterBalance = defaultWater - info['ingredients']['water']
-            #     milkBalance = defaultMilk - info['ingredients']['milk']
-            #     coffeeBalance = defaultCoffee - info['ingredients']['coffee']
-            #
-            #     defaultWater = waterBalance
-            #     defaultMilk = milkBalance
-            #     defaultCoffee = coffeeBalance
-            #
-            #     print(f"Here is ${drinkDecimal} in change.")
-            #     print(f"Here is your {question} ☕. Enjoy!")
-
             elif account != 0 and question == 'espresso':
-
-                # account = drinkCost
 
                 account = account + drinkCost
 
@@ -125,29 +87,15 @@ def selection(drinkType):
                 drinkChange = thePrice - drinkCost
                 drinkDecimal = "{:.3}".format(drinkChange)
 
-                # waterBalance = waterRemains - info['ingredients']['water']
-                # coffeeBalance = coffeeRemains - info['ingredients']['coffee']
-
                 waterBalance = defaultWater - info['ingredients']['water']
                 coffeeBalance = defaultCoffee - info['ingredients']['coffee']
 
-                # Pick it up from here. if code does not work return it back from the next line of
-
-                # print(defaultWater, defaultMilk, defaultCoffee)
-
-                # global defaultWater
-                # global defaultMilk
-                # global defaultCoffee
-
                 defaultWater = waterBalance
-                # defaultMilk = milkBalance
-                defaultCoffee = coffeeBalance
 
-                # print(defaultWater, defaultMilk, defaultCoffee)
+                defaultCoffee = coffeeBalance
 
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
-                # print(defaultWater)
 
             elif account == 0 or question == 'espresso':
 
@@ -161,39 +109,17 @@ def selection(drinkType):
                 waterBalance = waterRemains - info['ingredients']['water']
                 coffeeBalance = coffeeRemains - info['ingredients']['coffee']
 
-                # Pick it up from here. if code does not work return it back from the next line of
-
-                # print(defaultWater, defaultMilk, defaultCoffee)
-
-                # global defaultWater
-                # global defaultMilk
-                # global defaultCoffee
-
                 defaultWater = waterBalance
-                # defaultMilk = milkBalance
-                defaultCoffee = coffeeBalance
 
-                # print(defaultWater, defaultMilk, defaultCoffee)
+                defaultCoffee = coffeeBalance
 
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
-                # print(defaultWater)
-
-            # elif account != 0 and defaultWater < info['ingredients']['water']:
-            #     print(defaultWater)
-            #     print("Sorry there is not enough water.")
-
-
-def noMilk():
-    pass
 
 
 while True:
 
     question = input("What would you like? (espresso/latte/cappuccino): ").lower()
-
-    # if account == 0 or account != 0 and question == 'espresso':
-    #     noMilk()
 
     if question != 'report':
         selection(drinkType=question)
@@ -202,18 +128,16 @@ while True:
         print(f"Water: {defaultWater}{measurement}")
         print(f"Milk: {defaultMilk}{measurement}")
         print(f"Coffee: {defaultCoffee}{quantity}")
-        # account = account +
-        print(f"Money: {account}")
+
+        print(f"Money: ${account}")
 
     elif account == 0 and question == 'report':
         print(f"Water: {defaultWater}{measurement}")
         print(f"Milk: {defaultMilk}{measurement}")
         print(f"Coffee: {defaultCoffee}{quantity}")
         print(
-            f"Money: {account}"
+            f"Money: ${account}"
         )
-        # print(f"Water: {resources['water']}ml\nMilk: {resources['milk']}ml\nCoffee: {resources['coffee']}g")
-        # print(f"Money: ${account}")
 
     elif question == 'off':
         print(f"Powering off the coffee machine... GoodBye!!!")
@@ -229,5 +153,3 @@ while True:
 
 # Todo Make Coffee
 
-
-# elif account != 0 and question == 'espresso':
