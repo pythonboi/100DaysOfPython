@@ -16,7 +16,7 @@ defaultWater = resources.get('water')
 defaultMilk = resources['milk']
 defaultCoffee = resources['coffee']
 
-print(defaultWater, defaultMilk, defaultCoffee)
+print(defaultWater, defaultMilk, defaultCoffee, account)
 
 measurement = 'ml'
 quantity = 'g'
@@ -43,7 +43,7 @@ def selection(drinkType):
     for checkDrink in MENU:
         if checkDrink == question:
             info = MENU.get(checkDrink)
-            # print(info)
+            print(info)
             # print(info['ingredients']['water'])
             drinkCost = info['cost']
             # print(drinkCost)
@@ -75,6 +75,10 @@ def selection(drinkType):
 
                 account = drinkCost
 
+                # Check here for money screw up
+                # print("I am reading this")
+                # account = account + drinkCost
+
                 # if thePrice > drinkCost:
 
                 drinkChange = thePrice - drinkCost
@@ -93,17 +97,39 @@ def selection(drinkType):
                 print(f"Here is ${drinkDecimal} in change.")
                 print(f"Here is your {question} ☕. Enjoy!")
 
+            # elif account != 0 and question != 'espresso':
+            #
+            #     print("I am here with no espresso")
+            #
+            #     account = account + drinkCost
+            #
+            #     waterBalance = defaultWater - info['ingredients']['water']
+            #     milkBalance = defaultMilk - info['ingredients']['milk']
+            #     coffeeBalance = defaultCoffee - info['ingredients']['coffee']
+            #
+            #     defaultWater = waterBalance
+            #     defaultMilk = milkBalance
+            #     defaultCoffee = coffeeBalance
+            #
+            #     print(f"Here is ${drinkDecimal} in change.")
+            #     print(f"Here is your {question} ☕. Enjoy!")
+
             elif account != 0 and question == 'espresso':
 
-                account = drinkCost
+                # account = drinkCost
+
+                account = account + drinkCost
 
                 print("I am here second")
 
                 drinkChange = thePrice - drinkCost
                 drinkDecimal = "{:.3}".format(drinkChange)
 
-                waterBalance = waterRemains - info['ingredients']['water']
-                coffeeBalance = coffeeRemains - info['ingredients']['coffee']
+                # waterBalance = waterRemains - info['ingredients']['water']
+                # coffeeBalance = coffeeRemains - info['ingredients']['coffee']
+
+                waterBalance = defaultWater - info['ingredients']['water']
+                coffeeBalance = defaultCoffee - info['ingredients']['coffee']
 
                 # Pick it up from here. if code does not work return it back from the next line of
 
