@@ -42,11 +42,11 @@ def selection(drinkType):
             drinkCost = info['cost']
 
             if account != 0 and defaultWater < info['ingredients']['water']:
-                # print(defaultWater)
+
                 print("Sorry there is not enough water.")
                 break
             print("Please insert coins.")
-            # if question == drinkType:
+
             quartersCount = pyip.inputInt(prompt="how many quarters?: ")
             dimesCount = pyip.inputInt("how many dimes?: ")
             nicklesCount = pyip.inputInt("how many nickles?: ")
