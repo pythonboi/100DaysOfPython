@@ -2,20 +2,40 @@ from menu import Menu, MenuItem
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
+myVariable = {'latte': 0,
+              'espresso': 1,
+              'cappuccino': 2
+              }
+
 getMenu = Menu()
-# getMenuItem = MenuItem()
+
 getCoffeeMaker = CoffeeMaker()
 getMoneyMachine = MoneyMachine()
 
-# getMenu.get_items()
+while True:
 
-getOrder = input(f"What would you like {getMenu.get_items()}: ")
+    getOrder = input(f"What would you like {getMenu.get_items()}: ")
 
-if getOrder == 'report':
-    getCoffeeMaker.report()
-    getMoneyMachine.report()
+    for item in myVariable:
+        if item == getOrder:
+            collectVariable = myVariable.get(item)
+            print(collectVariable)
 
-elif getOrder != '':
-    getMoneyMachine.process_coins()
+            getMenuItem = MenuItem(name=getMenu.menu[collectVariable].name, water=getMenu.menu, milk=getMenu.menu,
+                                   coffee=getMenu.menu,
+                                   cost=getMenu.menu[collectVariable].cost)
 
+            print(getMenuItem.name)
+            print(getMenuItem.cost)
+
+            myMoney = getMenuItem.cost
+            # print(myMoney)
+
+    if getOrder == 'report':
+        getCoffeeMaker.report()
+        getMoneyMachine.report()
+
+    elif getOrder != '':
+
+        getMoneyMachine.make_payment(myMoney)
 
