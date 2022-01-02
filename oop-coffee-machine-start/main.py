@@ -12,7 +12,6 @@ getMenu = Menu()
 getCoffeeMaker = CoffeeMaker()
 getMoneyMachine = MoneyMachine()
 
-
 while True:
 
     getOrder = input(f"What would you like {getMenu.get_items()}: ")
@@ -44,6 +43,9 @@ while True:
             # print(f"I am here {getCoffeeMaker.resources}")
             # print(f"I am here second {getCoffeeMaker.resources['water']}")
 
+            print(getMoneyMachine.money_received)
+            print(getMoneyMachine.profit)
+
     if getOrder == 'report':
         getCoffeeMaker.report()
         getMoneyMachine.report()
@@ -52,15 +54,21 @@ while True:
     #     getMenu.find_drink(getOrder)
 
     elif getCoffeeMaker.resources['water'] < myWater:
-        # print("This is not working")
+
         getCoffeeMaker.is_resource_sufficient(getMenuItem)
 
+    # elif getMoneyMachine.money_received <= getMoneyMachine.profit:
+    #     getMoneyMachine.make_payment(myMoney)
+
+    # elif getMoneyMachine.money_received < getCoffeeMaker.make_coffee(getMenuItem):
+    #     getCoffeeMaker.make_coffee(getMenuItem)
+
     elif getOrder != '':
+    #else:
 
         getMoneyMachine.make_payment(myMoney)
 
         getCoffeeMaker.make_coffee(getMenuItem)
 
-
-
-
+    elif getMoneyMachine.money_received <= getMoneyMachine.profit:
+        getMoneyMachine.make_payment(myMoney)
