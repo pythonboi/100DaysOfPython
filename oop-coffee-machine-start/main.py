@@ -16,7 +16,7 @@ while True:
 
     getOrder = input(f"What would you like {getMenu.get_items()}: ")
 
-    # print(getOrder)
+    # newMoneyRecieved = getMoneyMachine.money_received
 
     for item in myVariable:
         if item == getOrder:
@@ -44,7 +44,15 @@ while True:
             # print(f"I am here second {getCoffeeMaker.resources['water']}")
 
             print(getMoneyMachine.money_received)
+            # newMoneyRecieved += getMoneyMachine.money_received
+            # print(newMoneyRecieved)
             print(getMoneyMachine.profit)
+
+    # print("Printing outside")
+    # newMoneyRecieved = getMoneyMachine.process_coins()
+    # print(newMoneyRecieved)
+
+    # myGet = getMenuItem
 
     if getOrder == 'report':
         getCoffeeMaker.report()
@@ -57,18 +65,60 @@ while True:
 
         getCoffeeMaker.is_resource_sufficient(getMenuItem)
 
-    # elif getMoneyMachine.money_received <= getMoneyMachine.profit:
+    # elif getMoneyMachine.profit == 0 or getMoneyMachine.profit != 0:
+    #     # newMoneyRecieved = 0
+    #     # newMoneyRecieved += getMoneyMachine.money_received
+    # #
+    #     print("I am checking on without enough funds")
     #     getMoneyMachine.make_payment(myMoney)
 
-    # elif getMoneyMachine.money_received < getCoffeeMaker.make_coffee(getMenuItem):
+    # elif getOrder == getOrder and getMoneyMachine.money_received == 0:
+    #
+    #     newMoneyRecieved = getMoneyMachine.process_coins()
+
+    # print(newMoneyRecieved)
+
+    # elif getOrder == getMenuItem.name and getMoneyMachine.profit <= getMoneyMachine.money_received:
+    #     print("I am here")
+    #     # else:
+    #
+    #     getMoneyMachine.make_payment(myMoney)
+    #     # getCoffeeMaker.make_coffee(getMenuItem)
+
+    # elif getOrder == getMenuItem.name and getMoneyMachine.profit >= getMenuItem.cost:
+    #
+    #     print('check me')
+    #     print(getMenuItem.cost)
+    #     print(getMoneyMachine.money_received, getMoneyMachine.profit)
+    #     # getMoneyMachine.process_coins()
+    #
+    #     # getMoneyMachine.money_received(myMoney)
+    #     getMoneyMachine.make_payment(myMoney)
     #     getCoffeeMaker.make_coffee(getMenuItem)
 
-    elif getOrder != '':
-    #else:
+    # elif getMoneyMachine.make_payment(getMoneyMachine.money_received) <= getMoneyMachine.(getMenuItem.cost) and getMenuItem.cost:
+    elif getMoneyMachine.make_payment(getMenuItem.cost): #<= getMenuItem.cost:
 
-        getMoneyMachine.make_payment(myMoney)
+        # getOrder == getMenuItem.name
+        # getMoneyMachine.profit <= getMenuItem.cost:
+        # print("profit lower")
+        # print(getMoneyMachine.profit)
+        # getMoneyMachine.make_payment(myMoney)
+        # print(getMoneyMachine.process_coins())
+        #getMoneyMachine.make_payment(getMenuItem.cost)
+        # print(getMoneyMachine.money_received)
 
+        # if  > getMenuItem.cost:
         getCoffeeMaker.make_coffee(getMenuItem)
 
-    elif getMoneyMachine.money_received <= getMoneyMachine.profit:
-        getMoneyMachine.make_payment(myMoney)
+        # if getMoneyMachine.process_coins() < getMenuItem.cost:
+        #     getMoneyMachine.make_payment(getMenuItem.cost)
+        # myNewmoney = getMoneyMachine.process_coins()
+
+        # if getMoneyMachine.process_coins(): #getMoneyMachine.make_payment(myMoney):
+        #     #getMoneyMachine.make_payment(myMoney)
+        #     print("I am reading this")
+        #     getCoffeeMaker.make_coffee(getMenuItem)
+
+    # else:
+    #     print("check here")
