@@ -14,7 +14,7 @@ getMoneyMachine = MoneyMachine()
 
 while True:
 
-    getOrder = input(f"What would you like {getMenu.get_items()}: ")
+    getOrder = input(f"What would you like {getMenu.get_items()}: ").lower()
 
     # newMoneyRecieved = getMoneyMachine.money_received
 
@@ -29,9 +29,9 @@ while True:
                                    coffee=getMenu.menu[collectVariable].ingredients['coffee'],
                                    cost=getMenu.menu[collectVariable].cost)
 
-            print(getMenuItem.name)
-            myName = getMenuItem.name
-            print(getMenuItem.cost)
+            # print(getMenuItem.name)
+            # myName = getMenuItem.name
+            # print(getMenuItem.cost)
             myWater = getMenuItem.ingredients.get('water')
             myMilk = getMenuItem.ingredients.get('milk')
             myCoffee = getMenuItem.ingredients['coffee']
@@ -43,10 +43,10 @@ while True:
             # print(f"I am here {getCoffeeMaker.resources}")
             # print(f"I am here second {getCoffeeMaker.resources['water']}")
 
-            print(getMoneyMachine.money_received)
-            # newMoneyRecieved += getMoneyMachine.money_received
-            # print(newMoneyRecieved)
-            print(getMoneyMachine.profit)
+            # print(getMoneyMachine.money_received)
+            # # newMoneyRecieved += getMoneyMachine.money_received
+            # # print(newMoneyRecieved)
+            # print(getMoneyMachine.profit)
 
     # print("Printing outside")
     # newMoneyRecieved = getMoneyMachine.process_coins()
@@ -60,6 +60,8 @@ while True:
 
     # elif getOrder != getMenu.find_drink(getOrder):
     #     getMenu.find_drink(getOrder)
+    elif getOrder == 'off':
+        exit()
 
     elif getCoffeeMaker.resources['water'] < myWater:
 
@@ -95,6 +97,9 @@ while True:
     #     # getMoneyMachine.money_received(myMoney)
     #     getMoneyMachine.make_payment(myMoney)
     #     getCoffeeMaker.make_coffee(getMenuItem)
+
+    # Below is where i solve the issue. find out that the method is doing the job for calculating the coins
+    # I had to just pass the cost to the method and evaluate the money to the cost or profit
 
     # elif getMoneyMachine.make_payment(getMoneyMachine.money_received) <= getMoneyMachine.(getMenuItem.cost) and getMenuItem.cost:
     elif getMoneyMachine.make_payment(getMenuItem.cost): #<= getMenuItem.cost:
