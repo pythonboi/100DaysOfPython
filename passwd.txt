@@ -18,3 +18,28 @@ name@hotmail.com
 UserAccount:
 Femi
 Password: zLh232E%%ah92E9
+Email_Account:
+web
+UserAccount:
+ssl
+Password: %%!%!%OprO!%
+Email_Account:
+nomane
+UserAccount:
+noName
+Password: n8N88mn0Nom
+Email_Account:
+like
+UserAccount:
+like
+Password: RORT#1EORTOEO
+Email_Account:
+hafeeztukur@gmail.com
+UserAccount:
+SANS
+Password: Q!$M4MQ+0!0$Y!Y
+Email_Account:
+hafeeztukur@gmail.com
+UserAccount:
+SANS
+Password: VN!!0XC2X2b32
