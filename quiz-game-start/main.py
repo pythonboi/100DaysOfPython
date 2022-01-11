@@ -17,4 +17,4 @@ print(myQue.text)
 # lenQue = (question_bank[1])
 # print(lenQue)
 
-Quiz
+

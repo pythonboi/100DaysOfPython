@@ -9,3 +9,7 @@ class QuizBrain:
         for count in self.question_list:
             print(count)
 
+
+
+
+# newQ = Question(txt, answer)
