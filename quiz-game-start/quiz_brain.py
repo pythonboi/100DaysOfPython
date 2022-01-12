@@ -9,7 +9,7 @@ class QuizBrain:
         for count in self.question_list:
             print(count)
 
-
-
+    def me(self):
+        """Here are am """
 
 # newQ = Question(txt, answer)
