@@ -1,4 +1,5 @@
 from turtle import Turtle, Screen
+import random
 
 myTurtle = Turtle()
 
@@ -91,22 +92,33 @@ full = 3
 #         myTurtle.right(90)
 #
 
-fullCircle = 360
-forward = 100
+colors = ["dark olive green", "teal", "blue", "light slate gray", "dark magenta", "deep pink", "dark salmon", "navajo white"]
 
-numbers = 5
 
-for _ in range(numbers):
-    myTurtle.color("magenta")
-    myTurtle.forward(forward)
-    myTurtle.right(fullCircle/numbers)
-    #numbers += 1
+def number(numb_sides):
+    angle = 360 / numb_sides
+    for _ in range(numb_sides):
+        #myTurtle.color("magenta")
+        myTurtle.forward(100)
+        myTurtle.right(angle)
 
+
+for draw_shape in range(3, 11):
+    # myTurtle.color("Orange")
+    myTurtle.color(random.choice(colors))
+    number(draw_shape)
+
+
+
+
+
+# number(count=count)
+# count += 1
 
 # myTurtle.color("red")
 # myTurtle.forward(forward)
 # myTurtle.right(fullCircle / 4)
 
-    print(_)
+# print(_)
 
 Screen().exitonclick()
