@@ -2,7 +2,7 @@ from pytube import YouTube
 
 import os
 
-print(os.getcwd())
+print(f"Here is the current directory from the IDE environment: {os.getcwd()}")
 
 thePath = os.getcwd()
 
@@ -10,7 +10,7 @@ downloadPath = "/Users/erudite/Downloads"
 
 if thePath != downloadPath:
     os.chdir(downloadPath)
-    print(os.getcwd())
+    print(f"Changing to the Download directory from the laptop directory: {os.getcwd()}")
     # print(os.listdir())
     folder = input("What folder you looking for:? ").lower()
 
@@ -24,44 +24,57 @@ if thePath != downloadPath:
         print(f"{folder} already exist")
 
     else:
+        print(f"{folder} does not exits...Creating {folder} folder on {os.getcwd()}.")
         os.mkdir(folder)
         # print(f"{os.path.join(downloadPath, folder)}")
 
-    knowFolderName = input("Do you know the name of folder you want to delete:? 'y' for Yes and 'n' for No ").lower()
+    knowFolderName = input("Do you know the name of folder you want to delete:? 'y' for Yes and 'n' for No, 'm' for change to the new folder directory ").lower()
     if knowFolderName == 'y':
-        folderName = input("Type in the name of folder you want to delete:?").lower()
-        print("Please note the action is irreversible, the following action will delete all folder in this directory ")
+        print(f"Please note this action is irreversible, the following action will delete the {folder} folder in this directory {os.getcwd()} ")
+        folderName = input("Type in the name of folder you want to delete:? ").lower()
+
         if folderName in os.listdir(os.getcwd()):
             # os.removedirs(folderName)
             os.rmdir(folderName)
+            print(f"{folderName} successfully deleted/remove from {os.getcwd()} directory.")
 
     elif knowFolderName == 'n':
+
+        print(f"Below are the directories/folders in the {os.getcwd()}")
         for _ in os.listdir(os.getcwd()):
             if os.path.isdir(os.path.join(downloadPath, _)):
                 print(_)
+
+        remFile = input("Type the name of folder you want to delete:? ").lower()
+
+        for check in myDir:
+            if remFile in check:
+                ans = input(f"Are you sure you want to delete {remFile} folder: 'y' for yes and 'n' no ").lower()
+                if ans == 'y':
+                    os.rmdir(remFile)
+                    print(f"{remFile} folder/directory successful deleted")
+
+                elif ans == 'n':
+
+                    print(f"{remFile} directory not deleted")
+
+                else:
+                    print("Please choose 'y' yes or 'n' no")
+
+    elif knowFolderName == 'm':
+
+        os.path.isdir(folder)
+        print("Changing to the new folder directory")
+        os.chdir(os.path.join(downloadPath, folder))
+        print(os.getcwd())
+
     else:
         print("no options selected")
 
-    # print(os.listdir(os.getcwd()))
-
-    remFile = input("Type the name of folder you want to delete:? ").lower()
-    for check in myDir:
-        if remFile == check:
-            ans = input(f"Are you sure you want to delete the {remFile}: 'y' for yes and 'n' no ").lower()
-            if ans == 'y':
-                os.rmdir(remFile)
-                print(f"{remFile} directory successful deleted")
-
-            elif ans == 'n':
-
-                print(f"{remFile} directory not deleted")
-
-            else:
-                print("Please choose 'y' yes or 'n' no")
-
-    if os.path.isdir(folder):
-        os.chdir(os.path.join(downloadPath, folder))
-        print(os.getcwd())
+    # if os.path.isdir(folder):
+    #     print("Change to the new folder directory")
+    #     os.chdir(os.path.join(downloadPath, folder))
+    #     print(os.getcwd())
 
 
 
