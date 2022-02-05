@@ -25,9 +25,26 @@ if thePath != downloadPath:
 
     else:
         os.mkdir(folder)
-        print(f"{os.path.join(downloadPath, folder)}")
+        # print(f"{os.path.join(downloadPath, folder)}")
 
-    remFile = input("What folder/file you want to delete:? ").lower()
+    knowFolderName = input("Do you know the name of folder you want to delete:? 'y' for Yes and 'n' for No ").lower()
+    if knowFolderName == 'y':
+        folderName = input("Type in the name of folder you want to delete:?").lower()
+        print("Please note the action is irreversible, the following action will delete all folder in this directory ")
+        if folderName in os.listdir(os.getcwd()):
+            # os.removedirs(folderName)
+            os.rmdir(folderName)
+
+    elif knowFolderName == 'n':
+        for _ in os.listdir(os.getcwd()):
+            if os.path.isdir(os.path.join(downloadPath, _)):
+                print(_)
+    else:
+        print("no options selected")
+
+    # print(os.listdir(os.getcwd()))
+
+    remFile = input("Type the name of folder you want to delete:? ").lower()
     for check in myDir:
         if remFile == check:
             ans = input(f"Are you sure you want to delete the {remFile}: 'y' for yes and 'n' no ").lower()
@@ -39,11 +56,17 @@ if thePath != downloadPath:
 
                 print(f"{remFile} directory not deleted")
 
+            else:
+                print("Please choose 'y' yes or 'n' no")
+
+    if os.path.isdir(folder):
+        os.chdir(os.path.join(downloadPath, folder))
+        print(os.getcwd())
+
+
 
     # fullDir = os.path.join(downloadPath, folder)
     # print(fullDir)
-
-
 
     # print(myDir)
     # for chckFile in myDir:
