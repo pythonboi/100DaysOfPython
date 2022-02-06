@@ -28,55 +28,78 @@ if thePath != downloadPath:
         os.mkdir(folder)
         # print(f"{os.path.join(downloadPath, folder)}")
 
-    knowFolderName = input("Do you know the name of folder you want to delete:? 'y' for Yes and 'n' for No, 'm' for change to the new folder directory ").lower()
-    if knowFolderName == 'y':
-        print(f"Please note this action is irreversible, the following action will delete the {folder} folder in this directory {os.getcwd()} ")
-        folderName = input("Type in the name of folder you want to delete:? ").lower()
+    # To delete folder or not
 
-        if folderName in os.listdir(os.getcwd()):
-            # os.removedirs(folderName)
-            os.rmdir(folderName)
-            print(f"{folderName} successfully deleted/remove from {os.getcwd()} directory.")
+    choice = input("Do you have any folder you want to delete:?, 'y' for Yes and 'n' No: ").lower()
+    if choice == 'y':
 
-    elif knowFolderName == 'n':
+        knowFolderName = input(
+            "Do you know the name of folder you want to delete:? 'y' for Yes and 'n' for No, 'm' for change to the new folder directory ").lower()
+        if knowFolderName == 'y':
+            print(
+                f"Please note this action is irreversible, the following action will delete the {folder} folder in this directory {os.getcwd()} ")
+            folderName = input("Type in the name of folder you want to delete:? ").lower()
 
-        print(f"Below are the directories/folders in the {os.getcwd()}")
-        for _ in os.listdir(os.getcwd()):
-            if os.path.isdir(os.path.join(downloadPath, _)):
-                print(_)
+            if folderName in os.listdir(os.getcwd()):
+                # os.removedirs(folderName)
+                os.rmdir(folderName)
+                print(f"{folderName} successfully deleted/remove from {os.getcwd()} directory.")
 
-        remFile = input("Type the name of folder you want to delete:? ").lower()
+        elif knowFolderName == 'n':
 
-        for check in myDir:
-            if remFile in check:
-                ans = input(f"Are you sure you want to delete {remFile} folder: 'y' for yes and 'n' no ").lower()
-                if ans == 'y':
-                    os.rmdir(remFile)
-                    print(f"{remFile} folder/directory successful deleted")
+            print(f"Below are the directories/folders in the {os.getcwd()}")
+            for _ in os.listdir(os.getcwd()):
+                if os.path.isdir(os.path.join(downloadPath, _)):
+                    print(_)
 
-                elif ans == 'n':
+            remFile = input("Type the name of folder you want to delete:? ").lower()
 
-                    print(f"{remFile} directory not deleted")
+            for check in myDir:
+                if remFile in check:
+                    ans = input(f"Are you sure you want to delete {remFile} folder: 'y' for yes and 'n' no ").lower()
+                    if ans == 'y':
+                        os.rmdir(remFile)
+                        print(f"{remFile} folder/directory successful deleted")
 
-                else:
-                    print("Please choose 'y' yes or 'n' no")
+                    elif ans == 'n':
 
-    elif knowFolderName == 'm':
+                        print(f"{remFile} directory not deleted")
 
+                    else:
+                        print("Please choose 'y' yes or 'n' no")
+
+        elif knowFolderName == 'm':
+
+            os.path.isdir(folder)
+            print("Changing to the new folder directory")
+            os.chdir(os.path.join(downloadPath, folder))
+            print(os.getcwd())
+
+        else:
+            print("no options selected")
+
+    elif choice == 'n':
+        print("No folder to delete")
         os.path.isdir(folder)
         print("Changing to the new folder directory")
         os.chdir(os.path.join(downloadPath, folder))
         print(os.getcwd())
 
-    else:
-        print("no options selected")
+        urlLink = input("Please type or paste the 'URL' here: ").lower()
+
+        youtube = YouTube(urlLink)
+
+        youtube.streams.filter(adaptive=True)
+        Resolution = youtube.streams.get_highest_resolution()
+
+        print(Resolution)
+
+
 
     # if os.path.isdir(folder):
     #     print("Change to the new folder directory")
     #     os.chdir(os.path.join(downloadPath, folder))
     #     print(os.getcwd())
-
-
 
     # fullDir = os.path.join(downloadPath, folder)
     # print(fullDir)
