@@ -7,11 +7,11 @@ question = input("Do you want to convert doc/word file to pdf:? ").lower()
 # if statement to get user decision
 if question == 'y':
 
-    # get the path to the input file for the Word document i.e docx
-    doc_file = input(r"Paste the doc file here: ")
+    # get the path to the input file for the Word document i.e docx, r for raw-string
+    doc_file = input(r"Paste the path where the doc file is here: ")
 
     # the path where the out file will be converted to
-    pdf_file = input(r"Paste where you want to save the csv file: ")
+    pdf_file = input(r"Paste where you want to save the pdf file: ")
 
     # convert the source file to destination file (from docx to pdf)
     convert(doc_file, pdf_file)
