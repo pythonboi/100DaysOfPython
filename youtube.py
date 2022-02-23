@@ -14,7 +14,7 @@ if thePath != PcPath:
     os.chdir(PcPath)
     print(f"Changing to the Download directory from the laptop directory: {os.getcwd()}")
     # print(os.listdir())
-    folder = input("What folder you looking for:? ").lower()
+    folder = input("What folder you looking for:? ").title()
 
     print(os.getcwd())
     myPath = os.getcwd()
@@ -93,7 +93,16 @@ if thePath != PcPath:
 
         youtube = YouTube(urlLink)
 
-        youtube.streams.filter(adaptive=True)
+        fl = youtube.streams.filter(adaptive=True)
         Resolution = youtube.streams.get_highest_resolution()
 
-        print(Resolution)
+        # print(fl)
+
+        for n in fl:
+            high = 0
+            getStream = n
+            for mn in getStream:
+                if mn 
+            print(getStream)
+
+
