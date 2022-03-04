@@ -12,13 +12,6 @@ colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSea
 
 direction = [0, 90, 180, 270]
 
-# def selectColor():
-#     for cl in colours:
-#         # getColor = cl
-#         myColor = random.choice(colours)
-#     print(myColor)
-
-# selectColor()
 
 for _ in range(300):
 
@@ -28,10 +21,7 @@ for _ in range(300):
 
     tim.color(random.choice(colours))
     
-
-    
-    
-
+  
 
 # t.exitonclick()
 
