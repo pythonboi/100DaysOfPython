@@ -12,27 +12,31 @@ colours = ["CornflowerBlue", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSea
 
 direction = [0, 90, 180, 270]
 
-# def selectColor():
-#     for cl in colours:
-#         # getColor = cl
-#         myColor = random.choice(colours)
-#     print(myColor)
+# t.colormode(255)
 
-# selectColor()
+def colorRange():
+
+    r = random.random()
+    g  = random.random()
+    b = random.random()
+
+
+    tim.color(r,g,b)
+
+# colorRange()
 
 for _ in range(300):
-
+  
+    
     tim.pensize(5)
     tim.forward(40)
     tim.setheading(random.choice(direction))
-
-    tim.color(random.choice(colours))
-    
+    colorRange()
 
     
     
+  
 
-
-# t.exitonclick()
+t.exitonclick()
 
 
