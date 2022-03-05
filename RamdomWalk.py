@@ -26,17 +26,14 @@ def colorRange():
 # colorRange()
 
 for _ in range(300):
-  
     
     tim.pensize(5)
     tim.forward(40)
     tim.setheading(random.choice(direction))
     colorRange()
 
-    
-    
-  
+     
 
 t.exitonclick()
 
-
+t.onscreenclick()
