@@ -15,16 +15,20 @@ fullshape = 360
 # t.goto(-175, 100)
 #t.penup()
 
-# t.fillcolor("green")
+t.color("green")
 t.begin_fill()
 
-def penDown(x):
+print(t.position())
+
+def penDown():
     
-    t.pendown
+    #t.pendown()
+    
     t.pensize(3)
-    # t.forward(100)
-    t.left(fullshape/4)
     t.forward(100)
+    t.left(fullshape/4)
+    
+    #t.forward(100)
     
 
 def penUp():
@@ -36,7 +40,7 @@ def penUp():
 
 
 for _ in range(0, 4):
-    penDown(t.color("green"))
+    penDown()
     #print(penDown(t.position))
     # for m in range(4):
     
@@ -45,18 +49,23 @@ for _ in range(0, 4):
 t.end_fill()
 print(t.position())
 
-#t.goto(-10.0, 0)
+t.goto(100.0, 0)
 for m in range(4):
     
     penUp()
 
 print(t.position())
-t.goto(90, 0.00)
+t.goto(200, -0.00)
+t.begin_fill()
 for thr in range(4):
 
     t.pendown()
-    t.forward(20)
-    
+    #t.forward(10)
+    penDown()
+
+t.end_fill()
+t.goto(300, 0.00)
+print(t.position())
     
 
 turtle.exitonclick()
