@@ -12,8 +12,8 @@ t = turtle.Turtle()
 
 fullshape = 360
 
-# t.goto(-175, 100)
-#t.penup()
+t.penup()
+t.goto(-175, 100)
 
 t.color("green")
 t.begin_fill()
