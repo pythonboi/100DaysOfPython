@@ -1,5 +1,5 @@
 # Import both the Turtle and Random Module 
-import random, turtle
+import random, turtle, time
 
 # create an object and instanciate the Turtle Class 
 t = turtle.Turtle()
@@ -17,6 +17,8 @@ t.penup()
 # Assign a color to you drawing and shape
 t.color("green")
 
+# Use the time module to wait before running the program.
+time.sleep(5)
 
 # Create a function for the Drawing  
 def penDown():
