@@ -5,7 +5,7 @@ tp = t.Turtle()
 
 tp.speed("fast")
 
-t.colormode(255)
+#t.colormode(255)
 
 
 def multiColor():
@@ -20,19 +20,19 @@ def multiColor():
     tp.color(r,g,b)
  
 
-def drawCircle(x):
+def drawCircle():
 
     for _ in range(12):
         tp.circle(100)
         tp.tilt(10)
         tp.left(30)
-
+        multiColor()
     
 #     tp.circle(100)
 #     tp.tilt(10)
 #     tp.fd(20)
 #     tp.circle(95)
 
-drawCircle(multiColor)
+drawCircle()
 
 t.exitonclick()
