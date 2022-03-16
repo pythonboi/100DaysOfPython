@@ -1,10 +1,10 @@
-from audioop import mul
 import random
 import turtle as t
 
 tp = t.Turtle()
 
-tp.speed("fast")
+tp.speed("fastest")
+t.setup(850, 750)
 
 r = 100
 
@@ -23,18 +23,18 @@ def multiColor():
 #     for _ in range(12):
 
 #         tp.circle(100)
-#         tp.tilt(10)
-#         tp.left(30)
+#         #tp.tilt(10)
+#         tp.left(10)
 #         multiColor()
 
 # drawCircle()
 
 
-for _ in range(38):
+for _ in range(70):
 
     tp.circle(r * 1)
-    tp.left(10)
-    #tp.tilt(30)
+    #tp.tilt(40)
+    tp.left(6)
     multiColor()
 
 
