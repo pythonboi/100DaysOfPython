@@ -30,7 +30,7 @@ def multiColor():
 # drawCircle()
 
 
-for _ in range(40):
+for _ in range(38):
 
     tp.circle(r * 1)
     tp.left(10)
