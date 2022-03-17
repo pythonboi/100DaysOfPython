@@ -18,23 +18,12 @@ def multiColor():
     tp.color(r,g,b)
  
 
-# def drawCircle():
 
-#     for _ in range(12):
+for _ in range(73):
 
-#         tp.circle(100)
-#         #tp.tilt(10)
-#         tp.left(10)
-#         multiColor()
-
-# drawCircle()
-
-
-for _ in range(70):
-
+    tp.pensize(1)
     tp.circle(r * 1)
-    #tp.tilt(40)
-    tp.left(6)
+    tp.left(5)
     multiColor()
 
 
