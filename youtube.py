@@ -94,15 +94,12 @@ if thePath != PcPath:
         youtube = YouTube(urlLink)
 
         fl = youtube.streams.filter(adaptive=True)
-        Resolution = youtube.streams.get_highest_resolution()
+        print(fl)
 
-        # print(fl)
+        highResolution = youtube.streams.get_highest_resolution()
 
-        for n in fl:
-            high = 0
-            getStream = n
-            for mn in getStream:
-                if mn 
-            print(getStream)
+        print(highResolution)
 
+        highResolution.download()
 
+        print("Video download successful")
