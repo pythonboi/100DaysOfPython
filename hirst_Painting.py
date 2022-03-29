@@ -46,7 +46,7 @@ def getTuple():
 
 getTuple()
 
-def draw():
+# def draw():
 
 
 t.exitonclick()
