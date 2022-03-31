@@ -41,12 +41,32 @@ t.Screen()
 def getTuple():
     for colors in myListColor:
         r, g, b = colors
-        print(r, g, b)
+
+        # print(type(colors))
+        return r, g, b  # (r, g, b)
 
 
-getTuple()
+def draw(x, y):
+    tp.penup()
+    # print(t.pos())
+    tp.goto(-275, -200)
+    for count in range(x):
+        for counts in range(y):
+            tp.dot(20, )
+            tp.forward(50)
 
-# def draw():
+        # multiplying the space with the number of dot to begin new line
+        tp.back(50 * y)
 
+        # Direction of the drawing
+        tp.left(90)
+        tp.forward(50)
+        tp.right(90)
+
+
+draw(10, 10)
+
+# hide the turtle drawing pen
+tp.hideturtle()
 
 t.exitonclick()
