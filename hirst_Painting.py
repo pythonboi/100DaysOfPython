@@ -29,21 +29,9 @@ tp = t.Turtle()
 t.Screen()
 
 
-# t.dot()
+t.colormode(255)
 
-# t.pu()
-# t.dot(20, "red"), t.pu()
-# t.fd(50)
-#
-# t.pu(), t.dot(20, "blue"), t.pu()
-# t.fd(50)
-
-def getTuple():
-    for colors in myListColor:
-        r, g, b = colors
-
-        # print(type(colors))
-        return r, g, b  # (r, g, b)
+print(random.choice(myListColor))
 
 
 def draw(x, y):
@@ -52,7 +40,7 @@ def draw(x, y):
     tp.goto(-275, -200)
     for count in range(x):
         for counts in range(y):
-            tp.dot(20, )
+            tp.dot(20, random.choice(myListColor))
             tp.forward(50)
 
         # multiplying the space with the number of dot to begin new line
