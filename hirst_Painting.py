@@ -28,15 +28,15 @@ myListColor = [(246, 240, 228), (248, 237, 243), (234, 246, 239), (235, 240, 247
 tp = t.Turtle()
 t.Screen()
 
-
 t.colormode(255)
 
-print(random.choice(myListColor))
+
+# print(random.choice(myListColor))
 
 
 def draw(x, y):
     tp.penup()
-    # print(t.pos())
+    tp.hideturtle()
     tp.goto(-275, -200)
     for count in range(x):
         for counts in range(y):
@@ -45,16 +45,16 @@ def draw(x, y):
 
         # multiplying the space with the number of dot to begin new line
         tp.back(50 * y)
-
         # Direction of the drawing
         tp.left(90)
         tp.forward(50)
+        # tp.back(50 * y)
         tp.right(90)
 
 
 draw(10, 10)
 
 # hide the turtle drawing pen
-tp.hideturtle()
+# tp.hideturtle()
 
 t.exitonclick()
