@@ -1,3 +1,4 @@
+import turtle
 from turtle import Turtle, Screen
 import random
 
@@ -15,36 +16,43 @@ screen.setup(700, 500)
 #
 # print(Answer)
 
-rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo']#, 'violet']
 
-userNames = ['jenny', 'pam', 'tom', 'jane', 'jim', 'kim', 'sam']
+userNames = ['jenny', 'pam', 'tom', 'jane', 'jim', 'kim']#, #'sam']
+
+y_Position = [30, 60, 90, 0, -30, -60, -90]
 
 colorTaken = []
 nameTaken = []
 
+#
+# def changeRange(x, y):
+#     global num
+#     for num in range(0, 6):
+#         num = num + 10
+#         turtle.goto(-335, num)
 
-# for num in range(len(rainbowColors)):
-#     if num < len(rainbowColors):
-#         if color not in
+for pick in range(0, 6):
+
+    userNames = Turtle()  # userNames.shape('turtle')
+    userNames.shape("turtle")
+    #userNames.color(pick)
+    userNames.penup()
+
+    userNames.goto(-335, y_Position[pick])
+    userNames.color()
+    # userNames.goto(changeRange(x, y=num))
 
 
-for pick in userNames:
-    if pick not in colorTaken:
-        colorTaken.append(pick)
-        #getName =
-print(colorTaken)
-
-    # for check in userNames:
-    #     if n not in check:
-    #         getName = Turtle()
-    #         getName.shape('turtle')
+# def pickUser():
+#     for name in userNames:
+#         name.
 
 
-# Jenny = Turtle()
-# Jenny.shape("turtle")
-# Jenny.color("red")
-# Jenny.penup()
-# Jenny.goto(-335, 0)
+
+    # for n in userNames:
+    #     if n in userNames:
+    #         n.goto(-335, 30)
 
 # pam = Turtle()
 # pam.color("orange")
