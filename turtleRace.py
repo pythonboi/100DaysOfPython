@@ -1,4 +1,4 @@
-import turtle
+# importing the turtle
 from turtle import Turtle, Screen
 import random
 
@@ -14,7 +14,8 @@ is_RaceOn = False
 
 # Ask a question and Enter you input message
 
-Answer = screen.textinput("Question", prompt="Which turtle color will win the race?")
+player1 = screen.textinput("Player1 Choose", prompt="Which turtle color will win the race?")
+player2 = screen.textinput("Player2 Choose", prompt="Which turtle color will win the race?")
 
 # print(Answer)
 
@@ -35,7 +36,6 @@ newTurtle = []
 
 
 for pick in range(0, 7):
-
     userNames = Turtle()  # userNames.shape('turtle')
     userNames.shape("turtle")
     userNames.color(rainbowColors[pick])
@@ -43,21 +43,29 @@ for pick in range(0, 7):
     userNames.goto(-335, y_Position[pick])
     newTurtle.append(userNames)
 
-print(newTurtle)
+# print(newTurtle)
 
-
-if Answer:
+if player1 != '' and player2 != '':
     is_RaceOn = True
-
 
 while is_RaceOn:
 
     for turtle in newTurtle:
-        print(turtle)
-        count = random.randint(0, 10)
-        #newSelect = random.choice(y_Position)
-        turtle.forward(count)
+        if turtle.xcor() > 320:
+            winnerTurtle = turtle.pencolor()
 
+            print(winnerTurtle)
+            is_RaceOn = False
+            if player1 == winnerTurtle:
+                print(f"Player1 Won, the {winnerTurtle} turtle won the race")
+
+            elif player2 == winnerTurtle:
+                print(f"Player2 Won, the {winnerTurtle} turtle won the race")
+            else:
+                print(f"You both loose, the {winnerTurtle} turtle won the race")
+        # print(turtle)
+        count = random.randint(0, 10)
+        turtle.forward(count)
 
 
 
@@ -66,10 +74,9 @@ while is_RaceOn:
 #         name.
 
 
-
-    # for n in userNames:
-    #     if n in userNames:
-    #         n.goto(-335, 30)
+# for n in userNames:
+#     if n in userNames:
+#         n.goto(-335, 30)
 
 # pam = Turtle()
 # pam.color("orange")
