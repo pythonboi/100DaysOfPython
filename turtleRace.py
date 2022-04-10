@@ -10,20 +10,21 @@ screen.title("Turtle Race!!!")
 # Create a scree size to use for the window
 screen.setup(700, 500)
 
+is_RaceOn = False
+
 # Ask a question and Enter you input message
 
-# Answer = screen.textinput("Question", prompt="Which turtle color will win the race?")
-#
+Answer = screen.textinput("Question", prompt="Which turtle color will win the race?")
+
 # print(Answer)
 
-rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo']#, 'violet']
+rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
 
-userNames = ['jenny', 'pam', 'tom', 'jane', 'jim', 'kim']#, #'sam']
+# userNames = ['jenny', 'pam', 'tom', 'jane', 'jim', 'kim']#, #'sam']
 
-y_Position = [30, 60, 90, 0, -30, -60, -90]
+y_Position = [-30, -60, -90, 0, 30, 60, 90]
 
-colorTaken = []
-nameTaken = []
+newTurtle = []
 
 #
 # def changeRange(x, y):
@@ -32,16 +33,32 @@ nameTaken = []
 #         num = num + 10
 #         turtle.goto(-335, num)
 
-for pick in range(0, 6):
+
+for pick in range(0, 7):
 
     userNames = Turtle()  # userNames.shape('turtle')
     userNames.shape("turtle")
-    #userNames.color(pick)
+    userNames.color(rainbowColors[pick])
     userNames.penup()
-
     userNames.goto(-335, y_Position[pick])
-    userNames.color()
-    # userNames.goto(changeRange(x, y=num))
+    newTurtle.append(userNames)
+
+print(newTurtle)
+
+
+if Answer:
+    is_RaceOn = True
+
+
+while is_RaceOn:
+
+    for turtle in newTurtle:
+        print(turtle)
+        count = random.randint(0, 10)
+        #newSelect = random.choice(y_Position)
+        turtle.forward(count)
+
+
 
 
 # def pickUser():
