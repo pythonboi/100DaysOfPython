@@ -41,6 +41,8 @@ for pick in range(0, 7):
 # Check if the players place a bet or have an input
 if player1 != '' and player2 != '':
     is_RaceOn = True
+else:
+    print("Please pick a color")
 
 # Keep running the turtle until is False
 while is_RaceOn:
