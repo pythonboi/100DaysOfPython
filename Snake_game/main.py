@@ -16,18 +16,6 @@ myScreen.title("Snake_Game ")
 
 myScreen.tracer(0)
 
-# myT.shape("square")
-# myT.color('white')
-# myT.penup()
-# myT.goto(0, 0)
-# snake_draw.append(myT)
-#
-# myT.shape("square")
-# myT.color('white')
-# myT.penup()
-# myT.goto(-20, 20)
-# snake_draw.append(myT)
-
 
 for build in range(0, 3):
     myT = Turtle()
