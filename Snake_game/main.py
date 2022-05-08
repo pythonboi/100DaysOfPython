@@ -6,7 +6,6 @@ myScreen = Screen()
 
 snakePosition = [0, -20, -40]
 snake_draw = []
-# snake_color = ['white', 'white', 'white']
 
 is_running = True
 
@@ -15,7 +14,6 @@ myScreen.bgcolor("black")
 myScreen.title("Snake_Game ")
 
 myScreen.tracer(0)
-
 
 for build in range(0, 3):
     myT = Turtle()
@@ -26,13 +24,9 @@ for build in range(0, 3):
     snake_draw.append(myT)
 
 
-# if snakePosition == 3:
-#     is_running = True
-
-
 while is_running:
     myScreen.update()
-    time.sleep(1)
+    time.sleep(0.1)
     for snake in snake_draw:
         snake.forward(10)
 
