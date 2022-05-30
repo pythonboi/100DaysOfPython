@@ -41,12 +41,6 @@ if currentDirectory != chgeDirectory:
             else:
                 fileSide.append(check)
 
-        print("Here is folder/directory section below: ")
-        print("=======================================================================================================")
-
-        # print(folderSide)
-        # print(len(fileSide))
-        print(fileSide)
 
         if newFolder not in folderSide:
             os.mkdir(newFolder)
@@ -54,7 +48,6 @@ if currentDirectory != chgeDirectory:
             print(f"{newFolder} folder created successful")
         else:
             print(f"{newFolder} folder already exits")
-            # exit()
 
 
 # Differentiate the file from the extension
@@ -67,15 +60,11 @@ if currentDirectory != chgeDirectory:
                 fileName = splitFileExt[0]
                 fileExt = splitFileExt[1]
 
-                # print(splitFileExt)
-
 # Using regular Expression to separate the file extension from the file name
 
                 for ext in fileExt:
                     regExt = re.search(r'\.(\w+)', fileExt)
                 newfileExt.append(regExt.group(1))
-
-        # print(newfileExt)
 
 # Making the extension to be unique in the file
 
@@ -113,7 +102,7 @@ if currentDirectory != chgeDirectory:
             try:
 
                 for word in newSet:
-                # print(word)
+
                     if word in fullPath and word in getExistingDir:
                         print(shutil.move(fullPath, getExistingDir))
             except shutil.Error:
@@ -126,4 +115,3 @@ if currentDirectory != chgeDirectory:
 urlLink3 = "https://www.youtube.com/watch?v=isRtFdu8sRs"
 #
 #
-# mvFolder = shutil.move(chgeDirectory, )
