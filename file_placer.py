@@ -12,10 +12,7 @@ fileSide = []
 getfileList = ' '
 newfileExt = []
 newSet = set()
-fullPath = os.path.join(chgeDirectory, getfileList)
-getFilename = []
-myAppend = []
-
+fullPath = ''
 
 if currentDirectory != chgeDirectory:
     os.chdir(chgeDirectory)
@@ -41,7 +38,6 @@ if currentDirectory != chgeDirectory:
             else:
                 fileSide.append(check)
 
-
         if newFolder not in folderSide:
             os.mkdir(newFolder)
 
@@ -49,8 +45,7 @@ if currentDirectory != chgeDirectory:
         else:
             print(f"{newFolder} folder already exits")
 
-
-# Differentiate the file from the extension
+        # Differentiate the file from the extension
 
         for f in fileSide:
 
@@ -60,23 +55,18 @@ if currentDirectory != chgeDirectory:
                 fileName = splitFileExt[0]
                 fileExt = splitFileExt[1]
 
-# Using regular Expression to separate the file extension from the file name
+                # Using regular Expression to separate the file extension from the file name
 
                 for ext in fileExt:
                     regExt = re.search(r'\.(\w+)', fileExt)
                 newfileExt.append(regExt.group(1))
 
-# Making the extension to be unique in the file
+        # Making the extension to be unique in the file
 
         for uni in newfileExt:
             newSet.add(uni.lower())
 
-        print(newSet)
-
-        print("Here is the second set side")
-        print(len(newSet))
-
-# Creating the Folder from the file extension
+        # Creating the Folder from the file extension
 
         for uniqFile in newSet:
             try:
@@ -92,7 +82,6 @@ if currentDirectory != chgeDirectory:
     for vryFile in lstDir:
 
         if os.path.isfile(vryFile):
-
             fullPath = os.path.join(chgeDirectory, vryFile)
 
         for chkFolder in folderSide:
