@@ -13,6 +13,7 @@ getfileList = ' '
 newfileExt = []
 newSet = set()
 fullPath = ''
+getExistingDir = ''
 
 if currentDirectory != chgeDirectory:
     os.chdir(chgeDirectory)
@@ -76,31 +77,45 @@ if currentDirectory != chgeDirectory:
             except FileExistsError:
                 print(f"{uniqFile} already exists ")
 
+        for vryFile in lstDir:
+            #print(vryFile)
+
+            if os.path.isfile(vryFile):
+                fullPath = os.path.join(chgeDirectory, vryFile)
+                print(f"{fullPath},  read this first")
+
+            elif vryFile in fullPath and vryFile in getExistingDir:
+                print(f"{vryFile}, I exits on both path ")
+
+
+
+            for chkFolder in folderSide:
+            # print(chkFolder)
+                getExistingDir = os.path.join(chgeDirectory, chkFolder)
+
+                try:
+
+                    for word in newSet:
+
+                        if word in fullPath and word in getExistingDir:
+                            print(shutil.move(fullPath, getExistingDir))
+
+                        elif os.path.isfile(vryFile) and vryFile in getExistingDir:
+                            print(f"{vryFile}, I am printing this")
+
+                        # elif vryFile in getExistingDir:
+                        #     print(f"{vryFile} already exists in directory")
+                except shutil.Error:
+                    print("file already exits")
+
     else:
         print("No folder created")
-
-    for vryFile in lstDir:
-
-        if os.path.isfile(vryFile):
-            fullPath = os.path.join(chgeDirectory, vryFile)
-
-        for chkFolder in folderSide:
-            # print(chkFolder)
-            getExistingDir = os.path.join(chgeDirectory, chkFolder)
-
-            try:
-
-                for word in newSet:
-
-                    if word in fullPath and word in getExistingDir:
-                        print(shutil.move(fullPath, getExistingDir))
-            except shutil.Error:
-                print("file already exits")
 
 # urlLink = "https://www.youtube.com/watch?v=n3IYVthup9I"
 #
 # urlLink2 = "https://www.youtube.com/watch?v=PAMpNhx4maM"
 
 urlLink3 = "https://www.youtube.com/watch?v=isRtFdu8sRs"
-#
-#
+
+
+
