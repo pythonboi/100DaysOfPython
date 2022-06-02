@@ -24,6 +24,15 @@ if currentDirectory != chgeDirectory:
 
         newFolder = input("Please Enter the name of the new Folder: ").title()
 
+        try:
+            os.mkdir(newFolder)
+            print(f"{newFolder} created successful")
+
+        except FileExistsError:
+            print(f"{newFolder} already exists")
+
+    else:
+
         if os.path.exists(chgeDirectory):
 
             lstDir = os.listdir(os.getcwd())
@@ -39,12 +48,12 @@ if currentDirectory != chgeDirectory:
             else:
                 fileSide.append(check)
 
-        if newFolder not in folderSide:
-            os.mkdir(newFolder)
-
-            print(f"{newFolder} folder created successful")
-        else:
-            print(f"{newFolder} folder already exits")
+        # if newFolder not in folderSide:
+        #     os.mkdir(newFolder)
+        #
+        #     print(f"{newFolder} folder created successful")
+        # else:
+        #     print(f"{newFolder} folder already exits")
 
         # Differentiate the file from the extension
 
@@ -78,7 +87,7 @@ if currentDirectory != chgeDirectory:
                 print(f"{uniqFile} already exists ")
 
         for vryFile in lstDir:
-            #print(vryFile)
+            # print(vryFile)
 
             if os.path.isfile(vryFile):
                 fullPath = os.path.join(chgeDirectory, vryFile)
@@ -87,10 +96,8 @@ if currentDirectory != chgeDirectory:
             elif vryFile in fullPath and vryFile in getExistingDir:
                 print(f"{vryFile}, I exits on both path ")
 
-
-
             for chkFolder in folderSide:
-            # print(chkFolder)
+                # print(chkFolder)
                 getExistingDir = os.path.join(chgeDirectory, chkFolder)
 
                 try:
@@ -108,14 +115,10 @@ if currentDirectory != chgeDirectory:
                 except shutil.Error:
                     print("file already exits")
 
-    else:
-        print("No folder created")
+        # print("No folder created")
 
 # urlLink = "https://www.youtube.com/watch?v=n3IYVthup9I"
 #
 # urlLink2 = "https://www.youtube.com/watch?v=PAMpNhx4maM"
 
 urlLink3 = "https://www.youtube.com/watch?v=isRtFdu8sRs"
-
-
-
