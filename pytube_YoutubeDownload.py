@@ -1,11 +1,15 @@
 import os
 from pytube import YouTube
 
-dirct = input("Please put the directory here: ")
+print(os.getcwd())
 
-if os.getcwd() != dirct:
+download_Dir = r"C:\Users\admin\Downloads"
 
-    os.chdir(dirct)
+# dirct = input("Please put the directory here: ")
+
+if os.getcwd() != download_Dir:
+
+    os.chdir(download_Dir)
     print(os.getcwd())
 
 urlLink = input("Please paste your URL link here: ")
@@ -13,10 +17,9 @@ urlLink = input("Please paste your URL link here: ")
 y = YouTube(urlLink)
 
 adapt = y.streams.filter(adaptive=True)
-print(adapt)
+# print(adapt)
 
 dwn = y.streams.get_highest_resolution()
-
 
 dwn.download()
 
