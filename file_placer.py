@@ -13,7 +13,7 @@ getfileList = ' '
 newfileExt = []
 newSet = set()
 fullPath = ''
-getExistingDir = ''
+# getExistingDir = ''
 
 if currentDirectory != chgeDirectory:
     os.chdir(chgeDirectory)
@@ -47,13 +47,6 @@ if currentDirectory != chgeDirectory:
 
             else:
                 fileSide.append(check)
-
-        # if newFolder not in folderSide:
-        #     os.mkdir(newFolder)
-        #
-        #     print(f"{newFolder} folder created successful")
-        # else:
-        #     print(f"{newFolder} folder already exits")
 
         # Differentiate the file from the extension
 
@@ -91,10 +84,7 @@ if currentDirectory != chgeDirectory:
 
             if os.path.isfile(vryFile):
                 fullPath = os.path.join(chgeDirectory, vryFile)
-                print(f"{fullPath},  read this first")
-
-            elif vryFile in fullPath and vryFile in getExistingDir:
-                print(f"{vryFile}, I exits on both path ")
+                # print(f"{fullPath},  read this first")
 
             for chkFolder in folderSide:
                 # print(chkFolder)
@@ -117,8 +107,3 @@ if currentDirectory != chgeDirectory:
 
         # print("No folder created")
 
-# urlLink = "https://www.youtube.com/watch?v=n3IYVthup9I"
-#
-# urlLink2 = "https://www.youtube.com/watch?v=PAMpNhx4maM"
-
-urlLink3 = "https://www.youtube.com/watch?v=isRtFdu8sRs"
