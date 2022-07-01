@@ -39,6 +39,8 @@ if currentDirectory != chgeDirectory:
             for v in lstDir:
                 getfileList += v
 
+            # Print the total number of existing directory
+
             print(len(lstDir), f"items in {chgeDirectory}")
 
         for check in lstDir:
@@ -103,7 +105,44 @@ if currentDirectory != chgeDirectory:
                         # elif vryFile in getExistingDir:
                         #     print(f"{vryFile} already exists in directory")
                 except shutil.Error:
-                    print("file already exits")
+                    print(f"{vryFile} file already exits")
 
-        # print("No folder created")
+# A new code begins from here. Everything works well from here until adding new code to it
 
+# Check if the file or folder already exits
+# dirPath = os.path.join(chgeDirectory, lstDir)
+# for read in os.listdir():
+#     getdirfullpathName = os.path.join(chgeDirectory, read)
+#     print(getdirfullpathName)
+#     # if
+# os.wal
+
+dirCheck = r'C:\Users\admin\Downloads'
+
+# print(folderSide)
+
+# for ck in fileSide:
+#
+#     if os.path.isfile(ck):
+#         print(ck)
+# if os.path.isfile():
+
+# print(ck)
+
+getFileName = ''
+
+# for roots, dirs, files in os.walk(chgeDirectory):  # ".", topdown=True):
+#     # print(roots)
+for fileCheck in lstDir:
+    if os.path.isfile(fileCheck):
+        getFileName = fileCheck
+        print(f"{getFileName} this is for the loop")
+
+    for name in lstDir:
+        dirPath = os.path.join(dirCheck, name)
+        print(dirPath)
+
+
+        # for data in dirPath:
+        #     os.listdir(data)
+        #     if
