@@ -135,12 +135,26 @@ getFileName = ''
 #     # print(roots)
 for fileCheck in lstDir:
     if os.path.isfile(fileCheck):
-        getFileName = fileCheck
+        getFileName += fileCheck
         print(f"{getFileName} this is for the loop")
 
     for name in lstDir:
         dirPath = os.path.join(dirCheck, name)
-        print(dirPath)
+        for roots, dirs, files in os.walk(dirPath):
+            if getFileName in files:
+                theDir = os.getcwd()
+                print(lstDir)
+                print(theDir)
+                os.remove(getFileName)
+                print(f"{getFileName} already exits"
+                    # getFileName# "
+                )
+
+            # print(files)
+        # print(dirPath)
+        #
+        # if getFileName in dirPath:
+
 
 
         # for data in dirPath:
