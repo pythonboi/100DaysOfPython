@@ -1,6 +1,8 @@
-import shutil, re, os
+import os
+import re
+import shutil
+
 # from CreateFolder import Folder
-from pytube import YouTube
 
 currentDirectory = os.getcwd()
 print(currentDirectory)
@@ -13,6 +15,7 @@ getfileList = ' '
 newfileExt = []
 newSet = set()
 fullPath = ''
+getFileName = ''
 
 if currentDirectory != chgeDirectory:
     os.chdir(chgeDirectory)
@@ -96,21 +99,12 @@ if currentDirectory != chgeDirectory:
                         if word in fullPath and word in getExistingDir:
                             print(shutil.move(fullPath, getExistingDir))
 
-                        # elif os.path.isfile(vryFile) and vryFile in getExistingDir:
-                        #     print(f"{vryFile}, I am printing this")
-
                 except shutil.Error:
                     print(f"{vryFile} file already exits")
 
 # A new code begins from here. The code above works well and adding new code below
 
-# Check if the file or folder already exits
-
-# dirCheck = r'C:\Users\admin\Downloads'
-
-print(chgeDirectory)
-
-getFileName = ''
+# Checked if the file already exits in a folder
 
 
 for fileCheck in lstDir:
