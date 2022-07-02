@@ -13,7 +13,6 @@ getfileList = ' '
 newfileExt = []
 newSet = set()
 fullPath = ''
-# getExistingDir = ''
 
 if currentDirectory != chgeDirectory:
     os.chdir(chgeDirectory)
@@ -79,17 +78,15 @@ if currentDirectory != chgeDirectory:
                     os.mkdir(uniqFile)  # .title())
                     print(f"{uniqFile} created successfully")
             except FileExistsError:
-                print(f"{uniqFile} already exists ")
+                print(f"{uniqFile} folder already exists ")
 
         for vryFile in lstDir:
-            # print(vryFile)
 
             if os.path.isfile(vryFile):
                 fullPath = os.path.join(chgeDirectory, vryFile)
-                # print(f"{fullPath},  read this first")
 
             for chkFolder in folderSide:
-                # print(chkFolder)
+
                 getExistingDir = os.path.join(chgeDirectory, chkFolder)
 
                 try:
@@ -99,50 +96,33 @@ if currentDirectory != chgeDirectory:
                         if word in fullPath and word in getExistingDir:
                             print(shutil.move(fullPath, getExistingDir))
 
-                        elif os.path.isfile(vryFile) and vryFile in getExistingDir:
-                            print(f"{vryFile}, I am printing this")
+                        # elif os.path.isfile(vryFile) and vryFile in getExistingDir:
+                        #     print(f"{vryFile}, I am printing this")
 
-                        # elif vryFile in getExistingDir:
-                        #     print(f"{vryFile} already exists in directory")
                 except shutil.Error:
                     print(f"{vryFile} file already exits")
 
-# A new code begins from here. Everything works well from here until adding new code to it
+# A new code begins from here. The code above works well and adding new code below
 
 # Check if the file or folder already exits
-# dirPath = os.path.join(chgeDirectory, lstDir)
-# for read in os.listdir():
-#     getdirfullpathName = os.path.join(chgeDirectory, read)
-#     print(getdirfullpathName)
-#     # if
-# os.wal
 
-dirCheck = r'C:\Users\admin\Downloads'
+# dirCheck = r'C:\Users\admin\Downloads'
 
-# print(folderSide)
-
-# for ck in fileSide:
-#
-#     if os.path.isfile(ck):
-#         print(ck)
-# if os.path.isfile():
-
-# print(ck)
+print(chgeDirectory)
 
 getFileName = ''
 
-# for roots, dirs, files in os.walk(chgeDirectory):  # ".", topdown=True):
-#     # print(roots)
+
 for fileCheck in lstDir:
     if os.path.isfile(fileCheck):
-        getFileName = fileCheck
-        print(f"{getFileName} this is for the loop")
+        getFileName += fileCheck
 
     for name in lstDir:
-        dirPath = os.path.join(dirCheck, name)
-        print(dirPath)
+        dirPath = os.path.join(chgeDirectory, name)
+        for roots, dirs, files in os.walk(dirPath):
+            if getFileName in files:
 
+                print(f"{getFileName} already exits in ", os.path.abspath(dirPath))
+                print(f"Removing {getFileName} in ", os.getcwd())
+                os.remove(getFileName)
 
-        # for data in dirPath:
-        #     os.listdir(data)
-        #     if
