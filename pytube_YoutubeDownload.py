@@ -17,7 +17,6 @@ urlLink = input("Please paste your URL link here: ")
 y = YouTube(urlLink)
 
 adapt = y.streams.filter(adaptive=True)
-# print(adapt)
 
 dwn = y.streams.get_highest_resolution()
 
