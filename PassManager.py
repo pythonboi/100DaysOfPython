@@ -11,6 +11,28 @@ def login():
         showLogin.config(text="login successful")
         print("login successful")
 
+        app.destroy()
+
+        newapp = Tk()
+
+        newapp.geometry("800x550")
+        newapp.title("User Entry")
+
+        vLabel = Label(newapp, font="Monaco, 10", text="View Account")
+        vLabel.place(x=20, y=20)
+
+        vBtn = Button(newapp, font="Arial, 10", fg="black", text="View Account", bg="orange", width=12, height=2)
+        vBtn.place(x=20, y=50)
+
+        cLabel = Label(newapp, font="Monaco, 10", text="Create Account")
+        cLabel.place(x=650, y=20)
+
+        cBtn = Button(newapp, font="Arial, 10", fg="black", text="Add Account", bg="green", width=12, height=2)
+        cBtn.place(x=650, y=50)
+
+    # else:
+    #     showLogin.config(text="wrong password")
+
 
 app.title("My Password Manager")
 
