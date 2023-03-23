@@ -54,7 +54,5 @@ def draw(x, y):
 
 draw(10, 10)
 
-# hide the turtle drawing pen
-# tp.hideturtle()
 
 t.exitonclick()

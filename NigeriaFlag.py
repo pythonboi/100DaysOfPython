@@ -1,7 +1,7 @@
 # Import both the Turtle and Random Module 
 import random, turtle, time
 
-# create an object and instanciate the Turtle Class 
+# create an object and instantiate the Turtle Class
 t = turtle.Turtle()
 
 # Use the shape method for the t object to switch to any shape to draw
@@ -38,7 +38,7 @@ def penUp():
     t.left(fullshape / 4)
 
 
-# Here is the begining of the function Line 
+# Here is the beginning of the function Line
 # set or position you drawing starting point. 
 t.goto(-150, 0.00)
 # Use the begin fill method to color the shape once the shape is completed

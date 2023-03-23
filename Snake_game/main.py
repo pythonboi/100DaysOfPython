@@ -23,11 +23,18 @@ for build in range(0, 3):
     myT.goto(snakePosition[build], 0)
     snake_draw.append(myT)
 
-
 while is_running:
     myScreen.update()
     time.sleep(0.1)
-    for snake in snake_draw:
-        snake.forward(10)
+
+    for snake_seg in range(len(snake_draw) - 1, 0, -1):
+        new_x = snake_draw[snake_seg - 1].xcor()
+        new_y = snake_draw[snake_seg - 1].ycor()
+        snake_draw[snake_seg].goto(new_x, new_y)
+
+    # for snake in snake_draw:
+    snake_draw[0].forward(10)
+
+    snake_draw[0].left(90)
 
 myScreen.exitonclick()

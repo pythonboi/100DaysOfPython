@@ -14,7 +14,7 @@
 #         """Simulate rolling over in response to a command"""
 #         print(f"{self.name} rolled over!")
 
-### Assignment ####
+### Assignment ###
 
 class Restaurant:
     """Creating a class Restaurant"""
@@ -39,7 +39,8 @@ class Restaurant:
     def increment_number_served(self, addNumber):
         if self.number_served <= addNumber:
             self.number_served += addNumber
-            print(f"Here is the new customers server {self.number_served} after previous {restaurant.set_number_served(newNumber=self.number_served)}")
+            print(
+                f"Here is the new customers server {self.number_served} after previous {restaurant.set_number_served(newNumber=self.number_served)}")
 
 
 class User:
@@ -72,7 +73,6 @@ class User:
 
 
 restaurant = Restaurant("AHA", "Halal")
-
 
 restaurant.describe_restaurant()
 
