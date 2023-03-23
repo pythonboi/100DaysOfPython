@@ -1,4 +1,3 @@
-import secrets
 from tkinter import *
 
 window = Tk()

@@ -2,7 +2,6 @@ import os
 import re
 import shutil
 
-# from CreateFolder import Folder
 
 currentDirectory = os.getcwd()
 print(currentDirectory)
@@ -104,7 +103,7 @@ if currentDirectory != chgeDirectory:
 
 # A new code begins from here. The code above works well and adding new code below
 
-# Checked if the file already exits in a folder
+# Checked if the file already exits in a folder and the current directory
 
 
 for fileCheck in lstDir:
